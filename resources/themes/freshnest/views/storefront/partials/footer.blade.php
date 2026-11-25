@@ -123,6 +123,11 @@
       </div>
         @endif
         </div>
+        <a class="fh-425f45" href="{{ route('admin.dashboard', absolute: false) }}"
+           aria-label="{{ __('store.common.admin_panel') }}" title="{{ __('store.common.admin_panel') }}"
+           style="display:inline-flex; width:40px; height:40px; flex:0 0 auto; margin-inline-start:auto; align-items:center; justify-content:center; border-radius:50%; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.08); color:#FFFFFF;">
+          <x-icon name="layout-dashboard" style="width:16px; height:16px;" />
+        </a>
       </div>
     </div>
     <div class="mob-only" style="height:78px;"></div>
