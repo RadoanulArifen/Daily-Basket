@@ -72,6 +72,22 @@ class AppServiceProvider extends ServiceProvider
             $model::deleted(fn () => \Illuminate\Support\Facades\Cache::deleteMultiple(['seo.sitemap', 'home.category_counts']));
         }
 
+        if (config('cache.default') === 'file' && config('store.theme') === 'freshnest') {
+            foreach ([
+                \App\Models\Product::class,
+                \App\Models\ProductVariant::class,
+                \App\Models\Category::class,
+                \App\Models\ProductOptionValue::class,
+                \App\Models\Brand::class,
+                \App\Models\Media::class,
+            ] as $model) {
+                $events = ['eloquent.saved: '.$model, 'eloquent.deleted: '.$model, 'eloquent.restored: '.$model];
+                Event::listen($events, fn () => \Illuminate\Support\Facades\DB::afterCommit(
+                    fn () => \Illuminate\Support\Facades\Cache::forget(\App\Themes\Freshnest\HomeData::HOMEPAGE_CATALOG_CACHE),
+                ));
+            }
+        }
+
         // Storefront theme (STORE_THEME): its views win, the base views fill any gaps.
         if (($theme = config('store.theme')) && is_dir($path = resource_path("themes/{$theme}/views"))) {
             \Illuminate\Support\Facades\View::prependLocation($path);

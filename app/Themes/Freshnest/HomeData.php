@@ -3,23 +3,29 @@
 namespace App\Themes\Freshnest;
 
 use App\Models\Banner;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Discount;
+use App\Models\Media;
 use App\Models\Product;
+use App\Models\ProductOptionValue;
+use App\Models\ProductVariant;
 use App\Models\Promotion;
 use App\Services\Catalog\StorefrontCatalog;
 use App\Services\Wishlist\WishlistService;
 use App\Support\Money;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 
 /**
  * Everything the FreshNest home page shows, from the store's own data:
  * banners (Content → Banners, by "Where"), categories, products, deals (Marketing →
- * Deals) and discount codes (Marketing → Discounts). Cached per request only.
+ * Deals) and discount codes (Marketing → Discounts). The homepage catalog may use a short-lived snapshot.
  */
 class HomeData
 {
+    public const HOMEPAGE_CATALOG_CACHE = 'freshnest.home.catalog.v1';
     private ?Collection $banners = null;
 
     private ?Collection $topCategories = null;
@@ -69,7 +75,42 @@ class HomeData
     /** All live products, loaded once. */
     public function products(): Collection
     {
-        return $this->products ??= $this->catalog->products()->with(['categories', 'brandRecord', 'variants.optionValues'])->orderBy('products.id')->get();
+        if ($this->products !== null) {
+            return $this->products;
+        }
+
+        $query = $this->catalog->products()->with(['categories', 'brandRecord', 'variants.optionValues'])
+            ->orderBy('products.id');
+
+        if (config('cache.default') !== 'file' || ! request()->routeIs('home', '*.home')) {
+            return $this->products = $query->get();
+        }
+
+        $snapshot = Cache::remember(self::HOMEPAGE_CATALOG_CACHE, 60, fn () => $query->get()
+            ->map(fn (Product $product) => [
+                'product' => $product->getAttributes(),
+                'media' => $product->media->map(fn (Media $media) => $media->getAttributes())->all(),
+                'categories' => $product->categories->map(fn (Category $category) => $category->getAttributes())->all(),
+                'brand' => $product->brandRecord?->getAttributes(),
+                'variants' => $product->variants->map(fn (ProductVariant $variant) => [
+                    'variant' => $variant->getAttributes(),
+                    'options' => $variant->optionValues->map(fn (ProductOptionValue $option) => $option->getAttributes())->all(),
+                ])->all(),
+            ])->all());
+
+        return $this->products = collect($snapshot)->map(function (array $row) {
+            $variants = (new ProductVariant)->newCollection(array_map(
+                fn (array $variant) => (new ProductVariant)->newFromBuilder($variant['variant'])
+                    ->setRelation('optionValues', ProductOptionValue::hydrate($variant['options'])),
+                $row['variants'],
+            ));
+
+            return (new Product)->newFromBuilder($row['product'])
+                ->setRelation('media', Media::hydrate($row['media']))
+                ->setRelation('categories', Category::hydrate($row['categories']))
+                ->setRelation('brandRecord', $row['brand'] === null ? null : (new Brand)->newFromBuilder($row['brand']))
+                ->setRelation('variants', $variants);
+        });
     }
 
     public function productCount(): int
