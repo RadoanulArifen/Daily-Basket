@@ -4,7 +4,7 @@
 @endphp
 
 {{-- Dark top bar: store, search (⌘K / Ctrl K), language and account. --}}
-<header class="fixed inset-x-0 top-0 z-40 flex h-14 items-center gap-2 bg-topbar px-2 text-white sm:px-3">
+<header class="fixed inset-x-0 top-0 z-40 flex h-14 items-center gap-1 bg-topbar px-2 text-white min-[380px]:gap-2 sm:px-3">
     <button type="button" @click="sidebarOpen = ! sidebarOpen" class="rounded-lg p-2 text-white/80 hover:bg-white/10 lg:hidden" aria-label="{{ __('admin.common.open_menu') }}">
         <x-icon name="menu" class="size-5" />
     </button>
@@ -12,7 +12,7 @@
     <a href="{{ route('admin.dashboard') }}" class="flex shrink-0 items-center gap-2 rounded-lg px-2 py-1.5 hover:bg-white/10 lg:w-56">
         @php $logoFile = settings()->get('general.logo_white') ?: settings()->get('general.logo'); @endphp
         @if ($logoFile)
-            <img src="{{ \Illuminate\Support\Facades\Storage::disk(config('store.uploads.disk'))->url($logoFile) }}" alt="{{ $storeName }}" fetchpriority="high" style="height: clamp(24px, 4vw, 30px); width: auto; max-width: 140px; object-fit: contain; object-position: center; display: block;">
+            <img src="{{ \Illuminate\Support\Facades\Storage::disk(config('store.uploads.disk'))->url($logoFile) }}" alt="{{ $storeName }}" fetchpriority="high" style="height: clamp(24px, 4vw, 30px); width: auto; max-width: min(140px, 28vw); object-fit: contain; object-position: center; display: block;">
         @else
             <span class="flex size-7 items-center justify-center rounded-lg bg-warning-100 text-[13px] font-bold text-ink-strong">{{ mb_strtoupper(mb_substr($storeName, 0, 1)) }}</span>
         @endif
@@ -21,11 +21,11 @@
         @endunless
     </a>
 
-    <div class="flex flex-1 justify-center">
-        <button type="button" @click="$dispatch('open-search')"
-                class="flex h-9 w-full max-w-[30rem] items-center gap-2 rounded-lg border border-white/10 bg-topbar-field px-3 text-start text-sm text-white/60 transition hover:border-white/20 hover:bg-brand-700">
+    <div class="flex min-w-0 flex-1 justify-center">
+        <button type="button" @click="$dispatch('open-search')" aria-label="{{ __('admin.search.placeholder') }}"
+                class="flex h-9 w-full max-w-[30rem] items-center gap-2 rounded-lg border border-white/10 bg-topbar-field px-3 text-start text-sm text-white/60 transition hover:border-white/20 hover:bg-brand-700 max-[379px]:justify-center max-[379px]:px-1">
             <x-icon name="search" class="size-4 shrink-0" />
-            <span class="flex-1 truncate">{{ __('admin.search.placeholder') }}</span>
+            <span class="hidden min-w-0 flex-1 truncate min-[380px]:block">{{ __('admin.search.placeholder') }}</span>
             <span class="hidden items-center gap-1 sm:flex" aria-hidden="true"><kbd class="admin-kbd" x-text="navigator.platform.includes('Mac') ? '⌘' : 'Ctrl'">Ctrl</kbd><kbd class="admin-kbd">K</kbd></span>
         </button>
     </div>
