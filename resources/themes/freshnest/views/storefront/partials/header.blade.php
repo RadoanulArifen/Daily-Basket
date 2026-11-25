@@ -130,6 +130,10 @@
           <span style="position:relative; display:inline-flex;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12.5h-11Z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position:absolute; top:-6px; right:-10px; min-width:18px; height:18px; padding:0 5px; border-radius:999px; background:var(--fn-primary); color:#FFFFFF; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center; border:2px solid #FFFFFF;" x-text="count">{{ $cartCount }}</span></span>
           <span class="h2-desk" style="font-size:12.5px; font-weight:500;">{{ __('Cart') }}</span>
         </a>
+        <a class="h2-desk fh-be0098" href="{{ route('admin.dashboard', absolute: false) }}" style="flex-direction:column; align-items:center; gap:5px; min-width:54px; color:var(--fn-primary);">
+          <x-icon name="layout-dashboard" style="width:24px; height:24px;" />
+          <span style="font-size:12.5px; font-weight:600; white-space:nowrap;">{{ __('store.common.admin_panel') }}</span>
+        </a>
       </div>
     </div>
 
@@ -192,6 +196,10 @@
         @foreach ($mobileLinks as $item)
           <a href="{{ $item->href() }}" @if ($isHere($item->href())) aria-current="page" @endif style="display:flex; align-items:center; justify-content:space-between; min-height:48px; border-bottom:1px solid #F0F1EE; font-weight:600; font-size:15px; color:{{ $isHere($item->href()) ? 'var(--fn-primary)' : 'var(--fn-ink)' }};">{{ $item->label }}<span style="color:#A3A9AE;">›</span></a>
         @endforeach
+        <a href="{{ route('admin.dashboard', absolute: false) }}" style="display:flex; align-items:center; gap:8px; min-height:48px; font-weight:700; font-size:15px; color:var(--fn-primary);">
+          <x-icon name="layout-dashboard" style="width:18px; height:18px;" />
+          {{ __('store.common.admin_panel') }}
+        </a>
       </div>
     </div>
   </header>

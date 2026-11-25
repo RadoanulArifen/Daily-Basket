@@ -3,6 +3,7 @@
 return [
 
     'common' => [
+        'admin_panel' => 'Admin Panel',
         'optional' => 'optional',
         'currency' => 'Currency',
         'apply' => 'Apply',

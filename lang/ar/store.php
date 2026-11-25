@@ -3,6 +3,7 @@
 return [
 
     'common' => [
+        'admin_panel' => 'لوحة الإدارة',
         'optional' => 'اختياري',
         'currency' => 'العملة',
         'apply' => 'تطبيق',
