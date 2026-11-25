@@ -17,9 +17,7 @@
                 @endforeach
             </div>
         </section>
-    @endif
-
-    @if (config('store.demo'))
+    @elseif (config('store.demo') && filled(config('store.demo_email')) && filled(config('store.demo_password')))
         {{-- A public demo: hand the visitor the sign-in rather than making them ask. --}}
         @php
             $demoEmail = config('store.demo_email');
