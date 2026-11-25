@@ -6,6 +6,10 @@
   "outputDirectory": "public",
   "rewrites": [
     {
+      "source": "/",
+      "destination": "https://daily-basket-9sla.onrender.com/"
+    },
+    {
       "source": "/:path*",
       "destination": "https://daily-basket-9sla.onrender.com/:path*"
     }
