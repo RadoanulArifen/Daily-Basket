@@ -30,7 +30,7 @@
     [$dealsSmall, $dealsBig] = array_pad(explode('|', (string) ($dealsMenu?->name ?? ''), 2), 2, '');
     $dealsItems = $dealsMenu?->tree ?? collect();
 
-    $navCategories = \App\Models\Category::query()->active()->whereNull('parent_id')->with('image')->orderBy('sort_order')->get();
+    $navCategories = app(\App\Themes\Freshnest\HomeData::class)->topCategories();
 
     $customer = auth('web')->user();
     $initials = $customer ? collect(preg_split('/\s+/', trim((string) $customer->name)))->filter()->take(2)->map(fn ($w) => mb_strtoupper(mb_substr($w, 0, 1)))->implode('') : '';

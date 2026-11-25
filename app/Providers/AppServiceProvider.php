@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->scoped(CartService::class);
         $this->app->scoped(WishlistService::class);
         $this->app->scoped(StorefrontCatalog::class);
+        $this->app->scoped(\App\Themes\Freshnest\HomeData::class);
         $this->app->scoped(\App\Services\Promotions\PromotionService::class);
         $this->app->singleton(\App\Services\Settings\Credentials::class);
     }
