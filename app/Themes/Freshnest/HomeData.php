@@ -22,6 +22,8 @@ class HomeData
 {
     private ?Collection $banners = null;
 
+    private ?Collection $categoryRows = null;
+
     private ?Collection $products = null;
 
     private ?Collection $promotions = null;
@@ -44,11 +46,15 @@ class HomeData
     /** @return Collection<int, array{category: Category, count: int}> top-level categories with product counts */
     public function categories(): Collection
     {
+        if ($this->categoryRows !== null) {
+            return $this->categoryRows;
+        }
+
         $categories = Category::query()->active()->whereNull('parent_id')->with('image')->orderBy('sort_order')->get();
         $counts = Cache::remember('freshnest.category_counts', 600, fn () => $categories->mapWithKeys(
             fn ($c) => [$c->id => $this->catalog->inCategory($this->catalog->products(), $c)->count()])->all());
 
-        return $categories->map(fn ($c) => ['category' => $c, 'count' => $counts[$c->id] ?? 0]);
+        return $this->categoryRows = $categories->map(fn ($c) => ['category' => $c, 'count' => $counts[$c->id] ?? 0]);
     }
 
     /** All live products, loaded once. */

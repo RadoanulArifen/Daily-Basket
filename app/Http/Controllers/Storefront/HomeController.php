@@ -11,6 +11,11 @@ class HomeController extends Controller
 {
     public function __invoke(StorefrontCatalog $catalog): View
     {
+        if (config('store.theme') === 'freshnest') {
+            // The FreshNest view loads its sections through HomeData.
+            return view('storefront.home.index');
+        }
+
         $featured = $catalog->products()->where('is_featured', true)->latest('published_at')->limit(8)->get();
 
         // Show whole rows of four on desktop (a lone product on a second row looks broken).
