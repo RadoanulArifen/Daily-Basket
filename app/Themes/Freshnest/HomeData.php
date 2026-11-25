@@ -63,6 +63,11 @@ class HomeData
         return $this->products ??= $this->catalog->products()->with(['categories', 'brandRecord', 'variants.optionValues'])->orderBy('products.id')->get();
     }
 
+    public function productCount(): int
+    {
+        return $this->products?->count() ?? $this->catalog->products()->count();
+    }
+
     /** Categories that have products, for the Fresh Picks tabs: [name => slug]. */
     public function tabs(): Collection
     {

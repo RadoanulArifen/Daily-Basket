@@ -64,14 +64,18 @@ class CollectionController extends Controller
     private function listing(ListingRequest $request, StorefrontCatalog $catalog, array $page): View
     {
         $filters = $request->filters();
-        // Counts are worked out over the listing itself, before any filter narrows it.
-        $facets = app(\App\Services\Catalog\ProductFacets::class)->counts(clone $page['query']);
+        // The FreshNest listing shows departments and stock/offer filters without facet counts.
+        if (config('store.theme') !== 'freshnest') {
+            $facets = app(\App\Services\Catalog\ProductFacets::class)->counts(clone $page['query']);
+            $page['facets'] = $facets;
+            $page['brands'] = \App\Models\Brand::query()
+                ->whereIn('id', array_keys(array_filter($facets['brands'])))->get()
+                ->sortBy(fn ($brand) => array_search($brand->id, $facets['brand_order'], true))->values();
+        }
+
         $products = $catalog->paginate($catalog->filter($page['query'], $filters, $page['defaultSort']));
 
         return view('storefront.collections.show', $page + [
-            'facets' => $facets,
-            'brands' => \App\Models\Brand::query()->whereIn('id', array_keys(array_filter($facets['brands'])))->get()
-                ->sortBy(fn ($b) => array_search($b->id, $facets['brand_order'], true))->values(),
             'products' => $products,
             'filters' => $filters,
             'sort' => $filters['sort'] ?? $page['defaultSort'],

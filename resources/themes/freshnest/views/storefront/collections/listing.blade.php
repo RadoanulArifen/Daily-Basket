@@ -6,7 +6,7 @@
     $home = app(\App\Themes\Freshnest\HomeData::class);
     $products->getCollection()->loadMissing(['variants.optionValues', 'categories', 'media']);
     $cats = $home->categories()->filter(fn ($c) => $c['count'] > 0);
-    $depts = collect([['label' => __('Shop'), 'href' => store_route('shop'), 'count' => $home->products()->count(), 'on' => $current === null]])
+    $depts = collect([['label' => __('Shop'), 'href' => store_route('shop'), 'count' => $home->productCount(), 'on' => $current === null]])
         ->concat($cats->map(fn ($c) => ['label' => $c['category']->name, 'href' => store_route('collections.show', ['slug' => $c['category']->slug]), 'count' => $c['count'], 'on' => $current === $c['category']->slug]));
 @endphp
     <div class="wrap shop-grid fn-listing" style="padding-top:clamp(28px,3.5vw,44px); padding-bottom:clamp(40px,5vw,64px);">
