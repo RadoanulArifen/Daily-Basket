@@ -98,7 +98,7 @@
             @foreach ($essentials as $product)
             @php $x = $home->card($product); @endphp
               <article class="fh-aaea60" style="display:flex; gap:14px; align-items:center; background:#FFFFFF; border:1px solid #F3E2D3; border-radius:20px; padding:12px; box-shadow:0 8px 22px rgba(212,88,10,.06); transition:transform .2s ease, box-shadow .2s ease;">
-                <a href="{{ $x['url'] }}" aria-label="{{ $x['name'] }}" style="position:relative; display:block; flex:0 0 auto; width:96px; height:96px; border-radius:16px; overflow:hidden; background:var(--fn-primary-tint);">
+                <a href="{{ $x['url'] }}" aria-label="{{ $x['name'] }}" style="position:relative; display:block; flex:0 0 auto; width:clamp(64px,22vw,96px); height:clamp(64px,22vw,96px); border-radius:16px; overflow:hidden; background:var(--fn-primary-tint);">
                   <span style="position:absolute; inset:0; pointer-events:none;">@include('storefront.home.partials.img', ['media' => $x['image'], 'alt' => '', 'sizes' => '96px'])</span>
                   @if ($x['pct'])<span style="position:absolute; left:6px; top:6px; background:var(--fn-accent-light); color:var(--fn-ink); font-size:10.5px; font-weight:700; padding:4px 7px; border-radius:999px;">{{ $x['pct'] }}%</span>@endif
                 </a>

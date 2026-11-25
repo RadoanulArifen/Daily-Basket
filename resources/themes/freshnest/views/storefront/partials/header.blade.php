@@ -62,14 +62,14 @@
   @endif
 
   <header style="position:sticky; top:0; z-index:40; background:#FFFFFF; border-bottom:1px solid var(--fn-line);">
-    <div class="wrap" style="display:flex; align-items:center; gap:clamp(12px,2.4vw,40px); padding-top:16px; padding-bottom:16px;">
-      <button type="button" class="h2-mob" @click="menuOpen = ! menuOpen" :aria-expanded="menuOpen" aria-controls="fn-mobile-menu" aria-label="{{ __('Menu') }}" style="width:42px; height:42px; border-radius:12px; border:1px solid var(--fn-line); background:#FFFFFF; align-items:center; justify-content:center; cursor:pointer; flex:0 0 auto;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--fn-ink)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"></path></svg></button>
-      <a href="{{ store_route('home') }}" aria-label="{{ $storeName }}" style="display:flex; align-items:center; gap:10px; flex:0 0 auto;">
+    <div class="wrap fn-header-main" style="display:flex; align-items:center; gap:var(--fn-header-gap, clamp(12px,2.4vw,40px)); padding-top:16px; padding-bottom:16px;">
+      <button type="button" class="h2-mob" @click="menuOpen = ! menuOpen" :aria-expanded="menuOpen" aria-controls="fn-mobile-menu" aria-label="{{ __('Menu') }}" style="width:var(--fn-header-control,42px); height:var(--fn-header-control,42px); border-radius:12px; border:1px solid var(--fn-line); background:#FFFFFF; align-items:center; justify-content:center; cursor:pointer; flex:0 0 auto;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--fn-ink)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"></path></svg></button>
+      <a href="{{ store_route('home') }}" aria-label="{{ $storeName }}" class="fn-header-logo" style="display:flex; align-items:center; gap:var(--fn-header-logo-gap,10px); min-width:0;">
         @if ($logo)
-          <img src="{{ $logo }}" alt="{{ $storeName }}" style="height:38px; width:auto; max-width:220px; object-fit:contain;">
+          <img src="{{ $logo }}" alt="{{ $storeName }}" style="height:var(--fn-header-logo-size,38px); width:auto; max-width:min(220px,100%); object-fit:contain;">
         @else
-        <img src="{{ asset('themes/freshnest/favicon.png') }}?v=2" alt="" width="38" height="38">
-        <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:24px; letter-spacing:-.02em; ; color:var(--fn-primary)">{{ $storeName }}</span>
+        <img src="{{ asset('themes/freshnest/favicon.png') }}?v=2" alt="" width="38" height="38" style="width:var(--fn-header-logo-size,38px); height:var(--fn-header-logo-size,38px); flex:none;">
+        <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:var(--fn-header-logo-text,24px); letter-spacing:-.02em; color:var(--fn-primary)">{{ $storeName }}</span>
         @endif
       </a>
       <form method="GET" action="{{ store_route('search') }}" role="search" data-tour="store-search" class="h2-desk" style="flex:1 1 auto; max-width:760px; margin-left:auto; margin-right:auto; align-items:center; height:54px; border:1px solid #E4E6E2; border-radius:999px; background:#FFFFFF; padding:4px 5px 4px 0;">
@@ -82,15 +82,15 @@
         <input name="q" type="search" value="{{ request('q') }}" placeholder="{{ __('Search for product...') }}" aria-label="{{ __('store.search.label') }}" style="flex:1 1 auto; min-width:0; height:100%; border:0; outline:none; padding:0 18px; font-size:14.5px; color:var(--fn-ink); background:transparent;" />
         <button class="fh-f80239" type="submit" aria-label="{{ __('Search') }}" style="flex:0 0 auto; height:100%; padding:0 22px; border:0; border-radius:999px; background:var(--fn-accent); color:#FFFFFF; font-weight:700; font-size:14px; cursor:pointer; display:flex; align-items:center; gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>{{ __('Search') }}</button>
       </form>
-      <div style="margin-left:auto; display:flex; align-items:flex-end; gap:clamp(10px,1.6vw,26px);">
+      <div style="margin-left:auto; display:flex; align-items:flex-end; gap:var(--fn-header-action-gap, clamp(10px,1.6vw,26px)); flex:none;">
         <div class="nv h2-desk" style="position:relative; align-self:stretch; align-items:flex-end;">
           @guest('web')
-            <a class="fh-be0098" href="{{ store_route('login') }}" aria-label="{{ __('Account') }}" style="display:flex; flex-direction:column; align-items:center; gap:5px; min-width:48px; color:var(--fn-ink);">
+            <a class="fh-be0098" href="{{ store_route('login') }}" aria-label="{{ __('Account') }}" style="display:flex; flex-direction:column; align-items:center; gap:5px; min-width:var(--fn-header-control,48px); color:var(--fn-ink);">
           <span style="position:relative; display:inline-flex;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 20.5c1.4-3.6 4.2-5.5 7.5-5.5s6.1 1.9 7.5 5.5"></path></svg></span>
           <span class="h2-desk" style="font-size:12.5px; font-weight:500;">{{ __('Account') }}</span>
         </a>
           @else
-            <a class="fh-99d6f6" href="{{ store_route('account.dashboard') }}" aria-label="{{ __('My account') }}" style="display:flex; flex-direction:column; align-items:center; gap:5px; min-width:48px; color:var(--fn-ink);">
+            <a class="fh-99d6f6" href="{{ store_route('account.dashboard') }}" aria-label="{{ __('My account') }}" style="display:flex; flex-direction:column; align-items:center; gap:5px; min-width:var(--fn-header-control,48px); color:var(--fn-ink);">
               <span style="position:relative; display:inline-flex; width:28px; height:28px; border-radius:50%; background:var(--fn-primary); color:#FFFFFF; font-size:11.5px; font-weight:800; align-items:center; justify-content:center; box-shadow:0 0 0 2px #FFFFFF, 0 0 0 3.5px var(--fn-primary);">{{ $initials }}<span style="position:absolute; right:-2px; bottom:-2px; width:9px; height:9px; border-radius:50%; background:#34C759; border:2px solid #FFFFFF;"></span></span>
               <span style="font-size:12.5px; font-weight:600; white-space:nowrap;">{{ __('Hi,') }} {{ \Illuminate\Support\Str::before(trim((string) $customer->name).' ', ' ') }}</span>
             </a>
@@ -122,11 +122,11 @@
             </div>
           @endguest
         </div>
-        <a class="fh-be0098" href="{{ store_route('wishlist') }}" x-data="{ count: {{ $wishlistCount }} }" @wishlist-updated.window="count = $event.detail.count" aria-label="{{ __('Wishlist') }}" style="display:flex; flex-direction:column; align-items:center; gap:5px; min-width:48px; color:var(--fn-ink);">
+        <a class="fh-be0098" href="{{ store_route('wishlist') }}" x-data="{ count: {{ $wishlistCount }} }" @wishlist-updated.window="count = $event.detail.count" aria-label="{{ __('Wishlist') }}" style="display:flex; flex-direction:column; align-items:center; gap:5px; min-width:var(--fn-header-control,48px); color:var(--fn-ink);">
           <span style="position:relative; display:inline-flex;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7a4.3 4.3 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20Z"></path></svg><span style="position:absolute; top:-6px; right:-10px; min-width:18px; height:18px; padding:0 5px; border-radius:999px; background:var(--fn-primary); color:#FFFFFF; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center; border:2px solid #FFFFFF;" x-text="count">{{ $wishlistCount }}</span></span>
           <span class="h2-desk" style="font-size:12.5px; font-weight:500;">{{ __('Wishlist') }}</span>
         </a>
-        <a class="fh-be0098" href="{{ store_route('cart') }}" data-cart-link x-data="{ count: {{ $cartCount }} }" @cart-updated.window="count = $event.detail.count" @click.prevent="$dispatch('open-cart-drawer')" aria-label="{{ __('Cart') }}" style="display:flex; flex-direction:column; align-items:center; gap:5px; min-width:48px; color:var(--fn-ink);">
+        <a class="fh-be0098" href="{{ store_route('cart') }}" data-cart-link x-data="{ count: {{ $cartCount }} }" @cart-updated.window="count = $event.detail.count" @click.prevent="$dispatch('open-cart-drawer')" aria-label="{{ __('Cart') }}" style="display:flex; flex-direction:column; align-items:center; gap:5px; min-width:var(--fn-header-control,48px); color:var(--fn-ink);">
           <span style="position:relative; display:inline-flex;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 12.5h-11Z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></svg><span style="position:absolute; top:-6px; right:-10px; min-width:18px; height:18px; padding:0 5px; border-radius:999px; background:var(--fn-primary); color:#FFFFFF; font-size:10.5px; font-weight:700; display:flex; align-items:center; justify-content:center; border:2px solid #FFFFFF;" x-text="count">{{ $cartCount }}</span></span>
           <span class="h2-desk" style="font-size:12.5px; font-weight:500;">{{ __('Cart') }}</span>
         </a>
@@ -134,9 +134,9 @@
     </div>
 
     <div class="wrap h2-mob" style="padding-bottom:12px;">
-      <form method="GET" action="{{ store_route('search') }}" role="search" data-tour="store-search" style="flex:1 1 auto; display:flex; align-items:center; height:46px; border:1.5px solid #E4E6E2; border-radius:999px; padding:4px 4px 4px 16px; gap:8px;">
+      <form method="GET" action="{{ store_route('search') }}" role="search" data-tour="store-search" style="flex:1 1 auto; min-width:0; display:flex; align-items:center; height:46px; border:1.5px solid #E4E6E2; border-radius:999px; padding:4px 4px 4px 16px; gap:8px;">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6F767D" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-        <input name="q" type="search" value="{{ request('q') }}" placeholder="{{ __('Search products…') }}" aria-label="{{ __('store.search.label') }}" style="flex:1 1 auto; min-width:0; border:0; outline:none; font-size:14.5px; background:transparent;" />
+        <input name="q" type="search" value="{{ request('q') }}" placeholder="{{ __('Search products…') }}" aria-label="{{ __('store.search.label') }}" style="flex:1 1 0; width:0; min-width:0; border:0; outline:none; font-size:14.5px; background:transparent;" />
         <button type="submit" style="height:100%; padding:0 16px; border:0; border-radius:999px; background:var(--fn-accent); color:#FFFFFF; font-weight:700; font-size:13.5px;">{{ __('Go') }}</button>
       </form>
     </div>

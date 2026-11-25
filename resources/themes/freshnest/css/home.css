@@ -248,3 +248,25 @@
     width: 1em;
     height: 1em;
 }
+
+.fn-newsletter-form {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+@media (max-width: 480px) {
+    .news-grid { grid-template-columns: minmax(0, 1fr); }
+
+    .fn-newsletter-form {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .fn-newsletter-form button {
+        grid-column: 1 / -1;
+        white-space: normal !important;
+    }
+
+    .fn-newsletter-form button > span:first-child { white-space: normal !important; }
+}

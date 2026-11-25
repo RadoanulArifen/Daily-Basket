@@ -28,3 +28,16 @@ button, input, select { font-family:inherit; }
 .fab-label { display:none; }
 @media (min-width:1024px) { .fab-stack { bottom:28px; } .fab-label { display:inline; } }
 @media (max-width:1023px) { .fab-stack > a { width:52px; padding:0 !important; justify-content:center; } }
+
+@media (max-width: 420px) {
+    .fn-header-main {
+        --fn-header-gap: 8px;
+        --fn-header-control: 36px;
+        --fn-header-logo-gap: 6px;
+        --fn-header-logo-size: 32px;
+        --fn-header-logo-text: clamp(17px, 5vw, 20px);
+        --fn-header-action-gap: 4px;
+    }
+
+    .fn-header-logo span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}

@@ -12,7 +12,7 @@
     <a href="{{ route('admin.dashboard') }}" class="flex shrink-0 items-center gap-2 rounded-lg px-2 py-1.5 hover:bg-white/10 lg:w-56">
         @php $logoFile = settings()->get('general.logo_white') ?: settings()->get('general.logo'); @endphp
         @if ($logoFile)
-            <img src="{{ \Illuminate\Support\Facades\Storage::disk(config('store.uploads.disk'))->url($logoFile) }}" alt="{{ $storeName }}" style="height: 26px; width: auto; max-width: 140px; object-fit: contain; object-position: center; display: block;">
+            <img src="{{ \Illuminate\Support\Facades\Storage::disk(config('store.uploads.disk'))->url($logoFile) }}" alt="{{ $storeName }}" fetchpriority="high" style="height: clamp(24px, 4vw, 30px); width: auto; max-width: 140px; object-fit: contain; object-position: center; display: block;">
         @else
             <span class="flex size-7 items-center justify-center rounded-lg bg-warning-100 text-[13px] font-bold text-ink-strong">{{ mb_strtoupper(mb_substr($storeName, 0, 1)) }}</span>
         @endif
