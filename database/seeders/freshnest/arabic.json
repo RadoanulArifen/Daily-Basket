@@ -1,0 +1,385 @@
+{
+ "text": {
+  "Daily Basket": "Daily Basket",
+  "Fresh from the farm in 45 minutes": "من المزرعة إليك خلال 45 دقيقة",
+  "Daily Basket Organic Grocery | Delivered in 45 Minutes": "Daily Basket للبقالة العضوية | توصيل خلال 45 دقيقة",
+  "Organic groceries from growers within 80 miles, delivered in 45 minutes. Certified organic, plastic-free packaging, carbon-neutral routes.": "بقالة عضوية من مزارعين على بعد 80 ميلاً، تصلك خلال 45 دقيقة. عضوية معتمدة، تغليف خالٍ من البلاستيك، ومسارات توصيل محايدة للكربون.",
+  "18 Meadow Row\nSan Francisco, CA 94110": "18 ميدو رو\nسان فرانسيسكو، كاليفورنيا 94110",
+  "Mon–Sun, 7am–10pm": "الاثنين–الأحد، 7 صباحاً–10 مساءً",
+  "Express delivery": "توصيل سريع",
+  "Same day, in about 45 minutes": "في اليوم نفسه، خلال 45 دقيقة تقريباً",
+  "Fruits": "فواكه",
+  "Vegetables": "خضروات",
+  "Dairy & Eggs": "ألبان وبيض",
+  "Bakery": "مخبوزات",
+  "Meat & Fish": "لحوم وأسماك",
+  "Beverages": "مشروبات",
+  "Snacks": "وجبات خفيفة",
+  "Organic Pantry": "مؤن عضوية",
+  "Sunridge Orchards": "بساتين صن ريدج",
+  "Two Creeks Farm": "مزرعة تو كريكس",
+  "Hollow Creek Dairy": "ألبان هولو كريك",
+  "Mill Lane Bakehouse": "مخبز ميل لين",
+  "Sonoma County, CA": "مقاطعة سونوما، كاليفورنيا",
+  "Half Moon Bay, CA": "هاف مون باي، كاليفورنيا",
+  "Petaluma, CA": "بيتالوما، كاليفورنيا",
+  "Baked in San Francisco": "مخبوز في سان فرانسيسكو",
+  "Stone fruit, apples and citrus from a family orchard in Sonoma.": "فواكه ذات نواة وتفاح وحمضيات من بستان عائلي في سونوما.",
+  "Roots, greens and brassicas grown on 40 acres near Half Moon Bay.": "جذور وورقيات وكرنبيات تُزرع على 40 فداناً قرب هاف مون باي.",
+  "Grass-fed milk, cultured butter and yoghurt from a 60-cow herd.": "حليب من أبقار تتغذى على العشب وزبدة مخمّرة وزبادي من قطيع من 60 بقرة.",
+  "Slow-proved sourdough and pastries from heritage wheat.": "خبز العجين المخمّر ومعجنات مختمرة ببطء من قمح تراثي.",
+  "Organic Hass Avocado": "أفوكادو هاس عضوي",
+  "Baby Leaf Spinach": "سبانخ أوراق صغيرة",
+  "Free-Range Eggs": "بيض دجاج حر",
+  "Sourdough Country Loaf": "رغيف عجين مخمّر ريفي",
+  "Heirloom Tomatoes": "طماطم تراثية",
+  "Alphonso Mangoes": "مانجو ألفونسو",
+  "Grass-Fed Whole Milk": "حليب كامل الدسم من أبقار مرعى",
+  "Almond Croissants": "كرواسون باللوز",
+  "Pink Lady Apples": "تفاح بينك ليدي",
+  "Rainbow Chard": "سلق ملوّن",
+  "Farmhouse Butter": "زبدة ريفية",
+  "Seeded Rye Bread": "خبز جاودار بالبذور",
+  "Blueberry Punnet": "علبة توت أزرق",
+  "Purple Sprouting Broccoli": "بروكلي بنفسجي",
+  "Natural Greek Yoghurt": "زبادي يوناني طبيعي",
+  "Cinnamon Morning Buns": "لفائف القرفة الصباحية",
+  "Pack size": "حجم العبوة",
+  "Family pack": "عبوة عائلية",
+  "Buy 1 Get 1": "اشترِ 1 واحصل على 1",
+  "Buy 3 Save 15%": "اشترِ 3 ووفّر 15٪",
+  "Buy 2 Get 1": "اشترِ 2 واحصل على 1",
+  "Home": "الرئيسية",
+  "Homepage": "الصفحة الرئيسية",
+  "Popular Products": "المنتجات الأكثر رواجاً",
+  "Deals of the Day": "عروض اليوم",
+  "Shop": "المتجر",
+  "All Products": "كل المنتجات",
+  "Dairy": "ألبان",
+  "Offers": "العروض",
+  "Contact": "اتصل بنا",
+  "Only This Weekend|Super Discount": "هذا الأسبوع فقط|خصم كبير",
+  "Organic fruit & veg|30% OFF": "فواكه وخضار عضوية|خصم 30٪",
+  "Fresh dairy|BUY 2 GET 1": "ألبان طازجة|اشترِ 2 واحصل على 1",
+  "Morning bakery|20% OFF": "مخبوزات الصباح|خصم 20٪",
+  "Fruits & Berries": "فواكه وتوت",
+  "Weekly Offers": "عروض الأسبوع",
+  "Company": "الشركة",
+  "Our Growers": "مزارعونا",
+  "Sustainability": "الاستدامة",
+  "Careers": "الوظائف",
+  "Help": "المساعدة",
+  "Delivery Info": "معلومات التوصيل",
+  "Returns & Refunds": "الإرجاع والاسترداد",
+  "Track Order": "تتبع الطلب",
+  "FAQs": "الأسئلة الشائعة",
+  "Privacy Policy": "سياسة الخصوصية",
+  "Terms & Conditions": "الشروط والأحكام",
+  "Harvested this morning": "حُصدت هذا الصباح",
+  "Premium Organic Produce, |Delivered Daily": "منتجات عضوية فاخرة، |تُوصَّل يومياً",
+  "Farm-fresh produce from local growers, delivered the same day.": "منتجات طازجة من مزارعين محليين، تصلك في اليوم نفسه.",
+  "Shop Now": "تسوّق الآن",
+  "80 mi": "80 ميلاً",
+  "Local growers": "مزارعون محليون",
+  "45 min": "45 دقيقة",
+  "100%": "100٪",
+  "Certified organic": "عضوي معتمد",
+  "Weekend only": "نهاية الأسبوع فقط",
+  "Weekend Savings Bonanza": "مهرجان توفير نهاية الأسبوع",
+  "30% OFF|On all organic fruits & vegetables this weekend.": "30٪ خصم|على كل الفواكه والخضار العضوية في نهاية هذا الأسبوع.",
+  "Grab the Deal": "احصل على العرض",
+  "Dairy aisle": "قسم الألبان",
+  "Fresh Dairy": "ألبان طازجة",
+  "Grass-fed milk, farmhouse yoghurt and free-range eggs from Hollow Creek Dairy.": "حليب مرعى وزبادي ريفي وبيض دجاج حر من ألبان هولو كريك.",
+  "Shop Dairy": "تسوّق الألبان",
+  "New arrivals": "وصل حديثاً",
+  "Cold-pressed juices": "عصائر معصورة على البارد",
+  "Bottled the morning you order": "تُعبّأ صباح يوم طلبك",
+  "Shop now": "تسوّق الآن",
+  "Pantry week": "أسبوع المؤن",
+  "Ancient grains & pulses": "حبوب وبقوليات أصيلة",
+  "Save up to 25% on bulk jars": "وفّر حتى 25٪ على العبوات الكبيرة",
+  "Meet the Hollow Creek farm": "تعرّف على مزرعة هولو كريك",
+  "Eggs, cream and butter, daily": "بيض وقشدة وزبدة، يومياً",
+  "Resets at midnight": "يتجدد عند منتصف الليل",
+  "Deal of the |Day": "صفقة |اليوم",
+  "One hero product at its lowest price, plus daily essentials marked down until the clock runs out.": "منتج مميز بأقل سعر، مع أساسيات يومية مخفّضة حتى ينتهي الوقت.",
+  "Everyday fresh": "طازج كل يوم",
+  "Crisp greens, 25% off": "خضار ورقية مقرمشة، خصم 25٪",
+  "Juicy fruit from $3.90": "فواكه عصيرية من 3.90$",
+  "Farm dairy & eggs": "ألبان وبيض المزرعة",
+  "Seasonal Fruit": "فواكه الموسم",
+  "Up to 25% off fresh berries": "خصم حتى 25٪ على التوت الطازج",
+  "Shop Fruits": "تسوّق الفواكه",
+  "Join 40,000+ home cooks": "انضم إلى أكثر من 40,000 طاهٍ منزلي",
+  "Get 10% Off Your First Order": "احصل على خصم 10٪ على طلبك الأول",
+  "Weekly harvest notes, seasonal recipes and member-only pricing. No spam, unsubscribe any time.": "نشرات الحصاد الأسبوعية ووصفات موسمية وأسعار خاصة بالأعضاء. بلا رسائل مزعجة، ويمكنك إلغاء الاشتراك في أي وقت.",
+  "Subscribe": "اشترك",
+  "100% Organic Certified": "عضوي معتمد 100٪",
+  "Every grower audited and certified to USDA organic standards.": "كل مزارع مدقَّق ومعتمد وفق معايير وزارة الزراعة الأمريكية العضوية.",
+  "45-Min Express Delivery": "توصيل سريع خلال 45 دقيقة",
+  "Same-day slots across the city, seven days a week.": "مواعيد في اليوم نفسه في أنحاء المدينة، سبعة أيام في الأسبوع.",
+  "Secure Payments": "دفع آمن",
+  "Encrypted checkout with all major cards and wallets.": "دفع مشفّر بكل البطاقات والمحافظ الرئيسية.",
+  "Easy Returns": "إرجاع سهل",
+  "Not fresh? Tell us within 24 hours for a full refund.": "لم يكن طازجاً؟ أخبرنا خلال 24 ساعة لاسترداد كامل المبلغ.",
+  "Every aisle in one place. Certified organic, harvested within 48 hours, delivered same day.": "كل الأقسام في مكان واحد. عضوي معتمد، يُحصد خلال 48 ساعة ويُوصَّل في اليوم نفسه.",
+  "Every live discount, member deal and bundle, in one list. New offers land each Thursday.": "كل الخصومات والعروض والباقات الحالية في قائمة واحدة. عروض جديدة كل خميس.",
+  "Questions about an order, a product or becoming a grower? Reach the team directly.": "لديك سؤال عن طلب أو منتج أو ترغب في أن تصبح مزارعاً معنا؟ تواصل مع الفريق مباشرة.",
+  "Answers to the questions we hear most about orders, delivery and our growers.": "إجابات عن أكثر الأسئلة شيوعاً حول الطلبات والتوصيل ومزارعينا.",
+  "How, when and where we deliver, and what it costs.": "كيف ومتى وأين نوصّل، وكم يكلّف ذلك.",
+  "If something isn't right, we'll replace it or refund you. No questions asked.": "إذا لم يكن شيء على ما يرام، نستبدله أو نعيد لك المبلغ دون أسئلة.",
+  "Every product comes from a named farm within 80 miles of our depot.": "كل منتج يأتي من مزرعة معروفة على بعد 80 ميلاً من مستودعنا.",
+  "Plastic-free packaging, carbon-neutral routes and fair prices paid to growers.": "تغليف خالٍ من البلاستيك، ومسارات محايدة للكربون، وأسعار عادلة للمزارعين.",
+  "Join the team getting fresh food from local farms to local doors.": "انضم إلى الفريق الذي يوصل الطعام الطازج من المزارع المحلية إلى أبواب البيوت.",
+  "How Daily Basket collects, uses and protects your personal information. Last updated September 1, 2026.": "كيف تجمع Daily Basket معلوماتك الشخصية وتستخدمها وتحميها. آخر تحديث 1 سبتمبر 2026.",
+  "The terms that apply when you use Daily Basket and place an order. Last updated September 1, 2026.": "الشروط التي تنطبق عند استخدامك Daily Basket وتقديم طلب. آخر تحديث 1 سبتمبر 2026.",
+  "Tree-ripened and picked at dawn. Stone fruit, berries, citrus and orchard classics from growers within 80 miles.": "تنضج على الشجرة وتُقطف فجراً. فواكه ذات نواة وتوت وحمضيات وكلاسيكيات البساتين من مزارعين على بعد 80 ميلاً.",
+  "Roots, greens and brassicas pulled from the soil this morning and packed in compostable crates.": "جذور وورقيات وكرنبيات قُلعت من التربة هذا الصباح وعُبّئت في صناديق قابلة للتحلل.",
+  "Grass-fed milk, cultured butter and free-range eggs from Hollow Creek and three neighbouring farms.": "حليب مرعى وزبدة مخمّرة وبيض دجاج حر من هولو كريك وثلاث مزارع مجاورة.",
+  "Slow-proved loaves and laminated pastries baked overnight, on your doorstep before breakfast.": "أرغفة مختمرة ببطء ومعجنات مورّقة تُخبز ليلاً وتصل بابك قبل الإفطار.",
+  "Checkout": "الدفع",
+  "Delivery": "التوصيل",
+  "Returns": "الإرجاع",
+  "Privacy": "الخصوصية"
+ },
+ "short": {
+  "fruits": "قُطفت ناضجة في {farm} ووصلت غرفة التبريد لدينا خلال ساعات. حلوة وعطرة وعضوية معتمدة، بلا طبقات شمعية.",
+  "vegetables": "قُلعت من تربة {farm} هذا الصباح. مقرمشة وغنية بالنكهة، ومزروعة دون مبيدات صناعية.",
+  "dairy": "من قطعان تتغذى على العشب في {farm}. مبسترة بلطف وغير مجانسة، وتُعبّأ في يوم جمعها.",
+  "bakery": "مختمرة ببطء طوال الليل في {farm} من دقيق عضوي مطحون بالحجر وملح البحر فقط."
+ },
+ "desc_tail": "تُتتبَّع كل دفعة إلى الحقل أو المطبخ الذي جاءت منه، واسم المزارع مطبوع على الملصق.",
+ "desc_fair": "نشتري مباشرة وندفع للمزارعين أكثر من سعر السوق، ولذلك يبقى السعر عادلاً لك وللمزرعة. نغلّف بألياف قابلة للتحلل ونوصّل بسيارات كهربائية في أنحاء المدينة.",
+ "storage": "التخزين والاستخدام",
+ "tips": {
+  "fruits": [
+   "احفظها في حرارة الغرفة حتى تنضج، ثم في الثلاجة.",
+   "اغسلها قبل الأكل مباشرة لا قبل التخزين.",
+   "الأفضل تناولها خلال 4–5 أيام."
+  ],
+  "vegetables": [
+   "احفظها مبرّدة في درج الخضار.",
+   "لفّ الورقيات بقطعة قماش رطبة لتبقى مقرمشة.",
+   "الأفضل استخدامها خلال 3–5 أيام."
+  ],
+  "dairy": [
+   "احفظها مبرّدة بين 1–4°م.",
+   "استخدمها خلال 3 أيام من فتحها.",
+   "رجّها بلطف قبل السكب؛ فالقشدة تطفو طبيعياً."
+  ],
+  "bakery": [
+   "احفظه في كيس ورقي بحرارة الغرفة.",
+   "أعد تحميصه 5 دقائق على 180°م لقشرة مقرمشة.",
+   "جمّد الشرائح حتى شهر واحد."
+  ]
+ },
+ "per100": "لكل 100 غ",
+ "nutrition": {
+  "Energy": "الطاقة",
+  "Protein": "البروتين",
+  "Carbohydrate": "الكربوهيدرات",
+  "Fat": "الدهون",
+  "Fibre": "الألياف",
+  "Sugars": "السكريات",
+  "Calcium": "الكالسيوم",
+  "Vitamin C": "فيتامين C",
+  "Salt": "الملح",
+  "Potassium": "البوتاسيوم",
+  "Iron": "الحديد",
+  "Saturates": "الدهون المشبعة",
+  "Vitamin A": "فيتامين A",
+  "Vitamin K": "فيتامين K",
+  "Folate": "حمض الفوليك",
+  "of which sugars": "منها سكريات",
+  "of which saturates": "منها دهون مشبعة"
+ },
+ "sections": {
+  "Delivery areas": [
+   "مناطق التوصيل",
+   "نوصّل في سان فرانسيسكو وأوكلاند وبيركلي وسان خوسيه. أدخل رمزك البريدي عند الدفع للتأكد من التغطية."
+  ],
+  "Delivery slots": [
+   "مواعيد التوصيل",
+   "اختر التوصيل السريع خلال 45 دقيقة أو احجز موعداً لمدة ساعتين حتى سبعة أيام مقدماً. يمكن تغيير الموعد حتى يتم تجهيز طلبك."
+  ],
+  "Fees": [
+   "الرسوم",
+   "التوصيل مجاني للطلبات فوق 50$. الطلبات الأقل تُحتسب عليها رسوم ثابتة 4.99$. لا يوجد حد أدنى للطلب."
+  ],
+  "If you're not home": [
+   "إذا لم تكن في المنزل",
+   "تُغلّف المنتجات المبرّدة بعوازل وتبقى باردة أربع ساعات. أضف تعليمات مكان آمن عند الدفع."
+  ],
+  "Quality guarantee": [
+   "ضمان الجودة",
+   "إذا لم يكن أي منتج طازجاً أو بالمستوى المطلوب، نعيد لك ثمنه كاملاً دون الحاجة لإرجاعه."
+  ],
+  "How to request a refund": [
+   "كيف تطلب استرداد المبلغ",
+   "افتح طلباتي، اختر الطلب ثم «الإبلاغ عن مشكلة». أضف صورة إن أمكن. تُقبل معظم الطلبات فوراً."
+  ],
+  "Refund methods": [
+   "طرق الاسترداد",
+   "يُعاد المبلغ إلى وسيلة الدفع الأصلية خلال 3–5 أيام عمل، أو فوراً كرصيد في Daily Basket."
+  ],
+  "Missing items": [
+   "منتجات ناقصة",
+   "إذا نقص منتج، نعيد ثمنه أو نوصّله مجاناً مع طلبك التالي، كما تفضّل."
+  ],
+  "How we choose growers": [
+   "كيف نختار المزارعين",
+   "كل مزرعة عضوية معتمدة ويزورها فريق التوريد لدينا قبل عرض منتجاتها."
+  ],
+  "Fair prices": [
+   "أسعار عادلة",
+   "يحدد المزارعون أسعارهم ويُدفع لهم خلال سبعة أيام. لا نطلب رسوم إدراج أو مساهمات ترويجية."
+  ],
+  "Information we collect": [
+   "المعلومات التي نجمعها",
+   "اسمك وبريدك الإلكتروني ورقم هاتفك وعناوين التوصيل وسجل الطلبات. تتولى جهة الدفع بيانات الدفع ولا تُحفظ على خوادمنا أبداً."
+  ],
+  "How we use it": [
+   "كيف نستخدمها",
+   "لمعالجة الطلبات وتوصيلها، وتقديم الدعم، وإرسال تحديثات الطلب، ومشاركة العروض ونشرات الحصاد إن اخترت ذلك."
+  ],
+  "Sharing": [
+   "المشاركة",
+   "نشارك فقط ما يلزم مع شركاء التوصيل ومعالجي الدفع. لا نبيع بياناتك الشخصية أبداً."
+  ],
+  "Cookies": [
+   "ملفات تعريف الارتباط",
+   "نستخدم ملفات أساسية لإبقائك مسجلاً وتذكّر سلتك، وملفات تحليلات اختيارية يمكنك إيقافها."
+  ],
+  "Data retention": [
+   "الاحتفاظ بالبيانات",
+   "تُحفظ سجلات الطلبات سبع سنوات لأغراض ضريبية. تُحذف بيانات الحساب الأخرى خلال 30 يوماً من إغلاقه."
+  ],
+  "Your rights": [
+   "حقوقك",
+   "يمكنك الاطلاع على بياناتك أو تصحيحها أو تصديرها أو حذفها في أي وقت من حسابك، أو بمراسلة privacy@dailybasket.example."
+  ],
+  "Contact": [
+   "التواصل",
+   "Daily Basket، 18 ميدو رو، سان فرانسيسكو، كاليفورنيا 94110. راسل privacy@dailybasket.example لأي سؤال عن هذه السياسة."
+  ],
+  "Using Daily Basket": [
+   "استخدام Daily Basket",
+   "بإنشاء حساب أو تقديم طلب فإنك توافق على هذه الشروط. يجب أن يكون عمرك 18 عاماً أو أكثر لتقديم طلب."
+  ],
+  "Orders and pricing": [
+   "الطلبات والأسعار",
+   "تشمل الأسعار الضرائب المطبقة وتُؤكَّد عند الدفع. تُسعَّر المنتجات الطازجة حسب الوزن المعلن وقد تختلف قليلاً."
+  ],
+  "Substitutions": [
+   "البدائل",
+   "إذا لم يتوفر منتج قد نعرض بديلاً مشابهاً، ويمكنك رفضه عند الباب واسترداد ثمنه كاملاً."
+  ],
+  "Delivery": [
+   "التوصيل",
+   "نسعى للتوصيل ضمن الموعد المختار. إذا تأخرنا أكثر من 30 دقيقة تُعاد رسوم التوصيل تلقائياً."
+  ],
+  "Cancellations": [
+   "الإلغاء",
+   "يمكنك الإلغاء مجاناً حتى يتم تجهيز طلبك، وبعدها قد لا يكون الإلغاء ممكناً."
+  ],
+  "Gift cards and promotions": [
+   "بطاقات الهدايا والعروض",
+   "بطاقات الهدايا صالحة 24 شهراً ولا تُستبدل نقداً. لا يمكن الجمع بين رموز الخصم ما لم يُذكر ذلك."
+  ],
+  "Liability": [
+   "المسؤولية",
+   "تقتصر مسؤوليتنا على قيمة طلبك، إلا حيث لا يسمح القانون بذلك."
+  ],
+  "Changes to these terms": [
+   "تغييرات الشروط",
+   "قد نحدّث هذه الشروط، وسنراسلك بالتغييرات المهمة قبل 14 يوماً على الأقل من سريانها."
+  ],
+  "Packaging": [
+   "التغليف",
+   "صناديق قابلة للإرجاع وبطانات قابلة للتحلل منزلياً بدلاً من البلاستيك أحادي الاستخدام في كل طلب."
+  ],
+  "Transport": [
+   "النقل",
+   "سياراتنا كهربائية بالكامل والمسارات مخططة لتقليل المسافات، ونعوّض الانبعاثات المتبقية عبر مشاريع موثّقة."
+  ],
+  "Food waste": [
+   "هدر الطعام",
+   "تذهب المنتجات غير المباعة كل مساء إلى بنوك الطعام المحلية، وما يتبقى يتحول إلى سماد يعود للمزارع الشريكة."
+  ],
+  "Reporting": [
+   "التقارير",
+   "ننشر كل عام تقرير أثر يتضمن أرقام التغليف والانبعاثات والهدر."
+  ],
+  "Open roles": [
+   "الوظائف المتاحة",
+   ""
+  ]
+ },
+ "stats": {
+  "Average delivery time": "متوسط وقت التوصيل",
+  "Free delivery threshold": "حد التوصيل المجاني",
+  "Delivery hours, every day": "ساعات التوصيل يومياً",
+  "To report an issue": "للإبلاغ عن مشكلة",
+  "Refund on quality issues": "استرداد عند مشاكل الجودة",
+  "Card refund time": "مدة استرداد البطاقة",
+  "Partner farms": "مزارع شريكة",
+  "Maximum distance from depot": "أقصى مسافة من المستودع",
+  "Field to door": "من الحقل إلى الباب",
+  "Plastic avoided last year": "بلاستيك تجنبناه العام الماضي",
+  "Electric delivery fleet": "أسطول توصيل كهربائي",
+  "Food waste to landfill": "هدر طعام إلى المكبّات"
+ },
+ "faq": [
+  [
+   "ما سرعة التوصيل؟",
+   "تصل معظم الطلبات خلال 45 دقيقة في سان فرانسيسكو، ويمكنك أيضاً حجز موعد لمدة ساعتين حتى سبعة أيام مقدماً."
+  ],
+  [
+   "هل كل المنتجات عضوية معتمدة؟",
+   "نعم. كل منتج طازج عضوي معتمد ويأتي من مزارع معروف على بعد 80 ميلاً من مستودعنا."
+  ],
+  [
+   "كم تكلفة التوصيل؟",
+   "التوصيل مجاني للطلبات فوق 50$، وأقل من ذلك تُطبّق رسوم ثابتة 4.99$."
+  ],
+  [
+   "ماذا لو كان منتج تالفاً أو ناقصاً؟",
+   "أبلغ عنه من حسابك خلال 48 ساعة وسنعيد ثمنه أو نستبدله مع طلبك التالي."
+  ],
+  [
+   "هل يمكنني تعديل طلبي بعد تقديمه؟",
+   "يمكنك إضافة منتجات أو إزالتها حتى يتم تجهيز طلبك، عادةً قبل 30 دقيقة من موعد التوصيل."
+  ],
+  [
+   "هل تستعيدون التغليف؟",
+   "نعم. اترك الصناديق عند الباب في توصيلتك القادمة وسيجمعها السائق."
+  ],
+  [
+   "ما طرق الدفع المقبولة؟",
+   "فيزا وماستركارد وأمريكان إكسبريس وآبل باي وجوجل باي وبطاقات هدايا Daily Basket."
+  ],
+  [
+   "كيف أصبح مزارعاً معكم؟",
+   "راسل growers@dailybasket.example بتفاصيل مزرعتك واعتمادها. نزور كل مورّد جديد قبل عرض منتجاته."
+  ]
+ ],
+ "jobs": {
+  "Delivery Driver": "سائق توصيل",
+  "Warehouse Picker": "مجهّز طلبات في المستودع",
+  "Produce Buyer": "مشترٍ للمنتجات الطازجة",
+  "Customer Support Specialist": "أخصائي دعم العملاء",
+  "Senior Frontend Engineer": "مهندس واجهات أمامية أول",
+  "Logistics": "الخدمات اللوجستية",
+  "Operations": "العمليات",
+  "Sourcing": "التوريد",
+  "Customer Care": "رعاية العملاء",
+  "Technology": "التقنية",
+  "San Francisco": "سان فرانسيسكو",
+  "Remote (US)": "عن بُعد (الولايات المتحدة)",
+  "Hybrid, SF": "هجين، سان فرانسيسكو",
+  "Full-time": "دوام كامل",
+  "Part-time": "دوام جزئي",
+  "apply": "للتقديم، راسل careers@dailybasket.example واكتب اسم الوظيفة في عنوان الرسالة."
+ }
+}

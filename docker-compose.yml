@@ -1,0 +1,61 @@
+# FreshNest — a working shop in one command.
+#
+#   cp .env.example .env      <- do this first, then set DB_PASSWORD (any strong value) in .env
+#   docker compose up -d --build
+#   docker compose exec app php artisan key:generate
+#   docker compose exec app php artisan migrate --seed --force
+#   docker compose exec app php artisan storage:link
+#
+# Shop: http://localhost:8080   Admin: http://localhost:8080/admin
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    env_file:
+      - .env
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: ${DB_DATABASE:-freshnest}
+      DB_USERNAME: ${DB_USERNAME:-freshnest}
+      DB_PASSWORD: ${DB_PASSWORD:?ERROR: set a strong DB_PASSWORD in .env before docker compose up (generate one with: openssl rand -base64 24)}
+      QUEUE_CONNECTION: sync
+    volumes:
+      - .:/var/www/html
+      - storage-data:/var/www/html/storage/app/public
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    image: nginx:1.27-alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html:ro
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8.0
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-freshnest}
+      MYSQL_USER: ${DB_USERNAME:-freshnest}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?ERROR: set a strong DB_PASSWORD in .env before docker compose up (generate one with: openssl rand -base64 24)}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-${DB_PASSWORD}}
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p\"$$MYSQL_ROOT_PASSWORD\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  db-data:
+  storage-data:

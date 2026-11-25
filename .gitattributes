@@ -1,0 +1,15 @@
+* text=auto eol=lf
+
+*.blade.php diff=html
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.php diff=php
+
+# Lock files are part of the product and always shipped: composer.lock and package-lock.json
+# pin every PHP and JavaScript dependency to an exact version (see DEPENDENCIES.md).
+composer.lock -diff linguist-generated
+package-lock.json -diff linguist-generated
+
+/.github export-ignore
+.styleci.yml export-ignore

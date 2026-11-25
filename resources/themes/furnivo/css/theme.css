@@ -1,0 +1,90 @@
+/*
+ * Furnivo theme. design.css is the design's own stylesheet, imported unchanged apart
+ * from the prototype tool's scaffolding (see tools/theme-import). The rest of this file
+ * only adds what the prototype did with JavaScript and isn't in its markup.
+ */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+@import '../../../css/tour.css';
+@import './design.css';
+
+[x-cloak] { display: none !important; }
+
+/* Screen-reader only text (the design has none; used for accessible labels). */
+.fv-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.fv-sr-focus:focus { position: fixed; top: 12px; left: 12px; z-index: 200; width: auto; height: auto; padding: 10px 16px; margin: 0; clip: auto; background: #fff; color: #1d1d1d; }
+
+/* Horizontal product rows scroll without a visible bar, like the design. */
+.fv-row::-webkit-scrollbar { display: none; }
+.fv-row { scrollbar-width: none; scroll-behavior: smooth; }
+
+
+/* Product card hover (the prototype did this with React state). */
+.fv-card:hover .fv-card-img { transform: scale(1.05) !important; }
+.fv-card:hover .fv-card-quick, .fv-card:focus-within .fv-card-quick { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* Product page "View in 3D": the design's own spin animation (ser3dspin in design.css). */
+.fv-spin { animation: 6s linear 0s infinite normal none running ser3dspin; }
+
+/* Text for screen readers only (e.g. the word "required" beside a * mark). */
+.sr-only-fv {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Content pages: the body text of Delivery, Terms, About and the like. */
+.fv-prose { color: rgb(85, 85, 85); font-size: 16px; line-height: 27px; }
+.fv-prose > *:first-child { margin-top: 0; }
+.fv-prose h2 {
+    margin: 36px 0 12px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: rgb(32, 32, 32);
+}
+.fv-prose h3 { margin: 28px 0 10px; font-size: 17px; font-weight: 600; color: rgb(32, 32, 32); }
+.fv-prose p { margin: 0 0 18px; }
+.fv-prose ul, .fv-prose ol { margin: 0 0 18px; padding-inline-start: 22px; }
+.fv-prose li { margin-bottom: 8px; }
+.fv-prose a { color: rgb(29, 29, 29); text-decoration: underline; }
+.fv-prose strong { color: rgb(32, 32, 32); font-weight: 600; }
+.fv-prose hr { border: none; border-top: 1px solid rgb(236, 236, 236); margin: 30px 0; }
+
+/* Text from the admin's HTML editor (product page, FAQ answers). */
+.fv-rich p, .fv-rich div { margin: 0 0 12px; }
+.fv-rich > *:last-child { margin-bottom: 0; }
+.fv-rich h2, .fv-rich h3 { margin: 16px 0 8px; font-size: 16px; font-weight: 600; color: rgb(32, 32, 32); }
+.fv-rich ul, .fv-rich ol { margin: 0 0 12px; padding-inline-start: 20px; }
+.fv-rich ul { list-style: disc; }
+.fv-rich ol { list-style: decimal; }
+.fv-rich li { margin-bottom: 4px; }
+.fv-rich a { color: rgb(29, 29, 29); text-decoration: underline; }
+.fv-rich strong, .fv-rich b { color: rgb(32, 32, 32); font-weight: 600; }
+
+/* About: the design's text column — the first paragraph is the large lead. */
+.fv-about p { margin: 0 0 24px; font-size: 18px; line-height: 31px; color: rgb(85, 85, 85); }
+.fv-about > p:first-child, .fv-about .fv-about-lead { margin: 0 0 30px; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.4; font-weight: 500; color: rgb(32, 32, 32); }
+.fv-about > *:last-child { margin-bottom: 0; }
+.fv-about h2 { margin: 36px 0 12px; font-size: 20px; font-weight: 700; color: rgb(32, 32, 32); }
+.fv-about ul, .fv-about ol { margin: 0 0 24px; padding-inline-start: 22px; font-size: 18px; line-height: 31px; color: rgb(85, 85, 85); }
+
+/* Guided tour (resources/css/tour.css) in the Furnivo colours. */
+:root {
+    --tour-ring: #1d1d1d;
+    --tour-label: #666666;
+    --tour-primary: #1d1d1d;
+    --tour-progress: #1d1d1d;
+    --tour-store-radius: 6px;
+    --tour-launcher-bg: #1d1d1d;
+    --tour-launcher-icon: #555555;
+}

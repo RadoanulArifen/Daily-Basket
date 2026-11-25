@@ -1,0 +1,104 @@
+/*
+ * FreshNest theme. design.css holds the design's own page-wide rules (the <helmet> styles of
+ * freshnest-html); hover.css is generated from the design's hover styles (style-hover=…),
+ * one class per distinct hover. This file adds only what the design did with JavaScript.
+ * Fonts are served from this site (no Google Fonts request), which the CSP requires.
+ */
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+@import '@fontsource/plus-jakarta-sans/800.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/ibm-plex-sans-arabic/400.css';
+@import '@fontsource/ibm-plex-sans-arabic/500.css';
+@import '@fontsource/ibm-plex-sans-arabic/600.css';
+@import '@fontsource/ibm-plex-sans-arabic/700.css';
+@import '../../../css/tour.css';
+@import './design.css';
+@import './home.css';
+@import './pages.css';
+@import './product.css';
+@import './checkout.css';
+@import './account.css';
+@import './hover.css';
+
+[x-cloak] { display: none !important; }
+.fn-hide { display: none !important; }
+
+/* Screen-reader only text. */
+.fn-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.fn-sr-focus:focus { position: fixed; top: 12px; left: 12px; z-index: 200; width: auto; height: auto; padding: 10px 16px; margin: 0; clip: auto; background: #fff; color: var(--fn-primary-dark); border-radius: 10px; }
+
+/* Footer link columns: always open on wide screens; on phones each folds (the design's
+   isMobile = up to 759px wide), with a rule under it and a +/– sign. */
+.fn-fhead { cursor: default; }
+.fn-fchev { display: none; }
+@media (max-width: 759px) {
+  .fn-fcol { border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 16px; }
+  .fn-fhead { cursor: pointer; }
+  .fn-fchev { display: inline; }
+  .fn-fcol:not(.is-open) .fn-flinks { display: none !important; }
+}
+
+/* Buttons keep the pointer cursor (Tailwind 4 dropped it in the base styles). */
+button:not(:disabled), [role="button"] { cursor: pointer; }
+
+/* Arabic (right-to-left). The page is flipped by dir="rtl" on <html> (flex rows, margins set
+   with "auto" and the grid follow on their own); these rules handle what does not:
+   an Arabic typeface, arrows that point "forward", left-aligned text and the cart drawer,
+   which slides in from the left. */
+[dir="rtl"] body, [dir="rtl"] body * { font-family: 'IBM Plex Sans Arabic', 'Plus Jakarta Sans', Inter, system-ui, sans-serif !important; letter-spacing: 0 !important; }
+[dir="rtl"] svg:has(> path[d="m9 6 6 6-6 6"]), [dir="rtl"] svg:has(> path[d="m9 6 6 6-6 6"]) { transform: scaleX(-1); }
+[dir="rtl"] svg:has(> path[d="M5 12h14"]), [dir="rtl"] svg:has(> path[d="M7 17 17 7M8 7h9v9"]) { transform: scaleX(-1); }
+[dir="rtl"] [style*="text-align:left"] { text-align: right !important; }
+[dir="rtl"] .fn-drawer { right: auto !important; left: 0 !important; box-shadow: 20px 0 50px rgba(0,0,0,.18) !important; }
+[dir="rtl"] .fn-drawer:not(.is-open) { transform: translateX(-100%) !important; }
+[dir="rtl"] .fab-stack { right: auto !important; left: clamp(14px,2vw,28px); align-items: flex-start !important; }
+
+/* FreshNest storefront palette. */
+:root {
+    --fn-primary: #23633F;
+    --fn-primary-dark: #194B30;
+    --fn-primary-deep: #173A28;
+    --fn-primary-hover: #2D5940;
+    --fn-primary-light: #AFE0BD;
+    --fn-primary-tint: #EAF4EC;
+    --fn-primary-pale: #D4E8D9;
+    --fn-accent: #8A4F13;
+    --fn-accent-dark: #75430F;
+    --fn-accent-light: #F4BD5C;
+    --fn-accent-lighter: #FFD88F;
+    --fn-accent-tint: #FFF0D6;
+    --fn-canvas: #FFF9F0;
+    --fn-surface-muted: #F7F0E5;
+    --fn-line: #E5E1D7;
+    --fn-ink: #202820;
+    --fn-muted: #546156;
+    --fn-on-dark: #E6F1E8;
+    --fn-on-dark-muted: #BCD6C3;
+    --fn-footer: #20362A;
+    --fn-footer-deep: #172A20;
+}
+
+/* Guided tour (resources/css/tour.css). */
+:root {
+    --tour-ring: var(--fn-accent);
+    --tour-dim: rgba(23, 58, 40, 0.55);
+    --tour-ink: var(--fn-ink);
+    --tour-title: var(--fn-primary-dark);
+    --tour-muted: var(--fn-muted);
+    --tour-label: var(--fn-accent-dark);
+    --tour-primary: var(--fn-primary);
+    --tour-progress: var(--fn-primary);
+    --tour-track: var(--fn-line);
+    --tour-font: 'Plus Jakarta Sans', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+    --tour-launcher-bg: var(--fn-primary-dark);
+    --tour-launcher-icon: var(--fn-accent);
+}
+
+.fn-category-link:is(:hover, :focus-visible, [aria-current="page"]) {
+    background: var(--fn-primary-tint);
+    color: var(--fn-primary);
+}

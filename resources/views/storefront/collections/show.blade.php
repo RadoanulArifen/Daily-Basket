@@ -1,0 +1,1 @@
+@include('storefront.collections.listing')

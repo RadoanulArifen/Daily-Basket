@@ -1,0 +1,7 @@
+/* TinyMCE in the admin: match the admin's fields. Loaded with the editor chunk only. */
+.tox.tox-tinymce { border: 1px solid #c9c9c9; border-radius: 8px; }
+.tox.tox-tinymce:focus-within { border-color: #1d1d1d; box-shadow: 0 0 0 3px rgba(29, 29, 29, .06); }
+.tox.tox-tinymce.is-error { border-color: #d72c0d; }
+.tox .tox-toolbar__primary, .tox .tox-editor-header { background: #fafafa !important; }
+.tox:not(.tox-tinymce-inline) .tox-editor-header { border-bottom: 1px solid #ebebeb !important; box-shadow: none !important; padding: 0 !important; }
+.tox .tox-statusbar { border-top-color: #ebebeb !important; }

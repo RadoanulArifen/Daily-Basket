@@ -1,0 +1,30 @@
+/* Generated from the design's hover styles (style-hover="…"); one class per distinct hover. */
+.fh-0d46e6:hover{background:rgba(255,255,255,.22) !important;color:#FFFFFF !important}
+.fh-151e18:hover{background:var(--fn-accent-dark) !important;color:#FFFFFF !important}
+.fh-17765c:hover{color:#FFFFFF !important}
+.fh-18ba34:hover{background:var(--fn-accent) !important;color:#FFFFFF !important}
+.fh-41c4b2:hover{background:var(--fn-primary-deep) !important}
+.fh-425f45:hover{background:var(--fn-accent) !important;border-color:var(--fn-accent) !important;color:#FFFFFF !important}
+.fh-4bf5f7:hover{border-color:var(--fn-primary) !important}
+.fh-5d63f2:hover{border-color:#FDE3CC !important;background:#FFFBF7 !important}
+.fh-6763d4:hover{background:var(--fn-primary) !important;color:#FFFFFF !important}
+.fh-72d217:hover{color:var(--fn-ink) !important}
+.fh-74ffb8:hover{background:var(--fn-primary-tint) !important;color:var(--fn-primary-dark) !important}
+.fh-92c14d:hover{background:var(--fn-primary-dark) !important}
+.fh-973ee6:hover{color:var(--fn-accent-light) !important}
+.fh-99d6f6:hover{color:var(--fn-primary) !important}
+.fh-a9cef1:hover{background:#F7F7F7 !important;color:var(--fn-ink) !important}
+.fh-aaea60:hover{transform:translateY(-3px) !important;box-shadow:0 16px 32px rgba(212,88,10,.12) !important}
+.fh-b496c7:hover{background:var(--fn-primary-dark) !important;border-color:var(--fn-primary-dark) !important;color:#FFFFFF !important}
+.fh-b7ed76:hover{background:var(--fn-primary) !important}
+.fh-b8e786:hover{background:var(--fn-accent-tint) !important;color:var(--fn-ink) !important}
+.fh-bb6aec:hover{background:var(--fn-primary-tint) !important}
+.fh-bbcc6b:hover{color:var(--fn-primary-dark) !important}
+.fh-be0098:hover{color:var(--fn-accent) !important}
+.fh-d109e0:hover{background:#F1F8F2 !important;color:var(--fn-primary-dark) !important}
+.fh-e15e24:hover{background:#FDF0EE !important}
+.fh-ec93c1:hover{color:#000000 !important}
+.fh-ed87d8:hover{background:var(--fn-primary-dark) !important;color:#FFFFFF !important}
+.fh-f16072:hover{box-shadow:0 14px 32px rgba(30,35,40,.08) !important}
+.fh-f46280:is(:hover,:focus-visible){background:var(--fn-primary-tint) !important;transform:translateY(-5px) !important;box-shadow:0 18px 34px rgba(25,75,48,.12) !important;border-color:var(--fn-primary-pale) !important}
+.fh-f80239:hover{background:var(--fn-accent-dark) !important}

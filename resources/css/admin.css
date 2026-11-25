@@ -1,0 +1,201 @@
+@import 'tailwindcss' source(none);
+@import './tour.css';
+
+@source '../views/admin';
+@source '../views/components/admin';
+@source '../views/components/icon.blade.php';
+@source '../../app/Http/Controllers/Admin';
+@source '../../app/Enums';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Admin palette follows the FreshNest storefront, with compact controls for store management.
+ */
+@theme {
+    --font-sans: 'Inter', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-arabic: 'IBM Plex Sans Arabic', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+    --color-canvas: #fff9f0;
+    --color-surface: #ffffff;
+    --color-subdued: #eaf4ec;           /* table headers, hovered rows */
+    --color-ink: #202820;
+    --color-ink-strong: #202820;
+    --color-ink-soft: #3b4b40;
+    --color-muted: #546156;
+    --color-line: #e5e1d7;
+    --color-line-strong: #b5c1b5;
+
+    /* Links, focus rings, selected states */
+    --color-brand-50: #eaf4ec;
+    --color-brand-100: #d4e8d9;
+    --color-brand-500: #357951;
+    --color-brand-600: #23633f;
+    --color-brand-700: #194b30;
+
+    --color-topbar: #173a28;
+    --color-topbar-field: #28533b;
+    --color-sidebar: #f7f0e5;
+    --color-sidebar-hover: #eaf4ec;
+
+    --color-danger-50: #fee9e8;
+    --color-danger-100: #fedad9;
+    --color-danger-600: #c70a24;
+    --color-danger-700: #8e0b21;
+    --color-success-50: #e6f9ee;
+    --color-success-100: #cdfee1;
+    --color-success-600: #0c7a43;
+    --color-success-700: #0c5132;
+    --color-warning-50: #fff8db;
+    --color-warning-100: #f4bd5c;
+    --color-warning-600: #8a6116;
+    --color-warning-700: #4f4700;
+    --color-info-50: #eaf4ff;
+    --color-info-100: #e0f0ff;
+    --color-info-600: #0070c9;
+    --color-info-700: #00527c;
+    --color-attention-100: #f4bd5c;
+    --color-attention-700: #5e4200;
+
+    --shadow-card: 0 0 0 1px rgb(0 0 0 / 0.06), 0 1px 1px rgb(0 0 0 / 0.04), 0 2px 3px -1px rgb(0 0 0 / 0.05);
+    --shadow-button: 0 1px 0 0 rgb(0 0 0 / 0.08), inset 0 -1px 0 0 rgb(0 0 0 / 0.12);
+    --shadow-button-primary: inset 0 1px 0 0 rgb(255 255 255 / 0.18), inset 0 -1px 0 0 rgb(0 0 0 / 0.6), 0 1px 1px rgb(0 0 0 / 0.2);
+    --shadow-popover: 0 0 0 1px rgb(0 0 0 / 0.08), 0 8px 24px -4px rgb(0 0 0 / 0.18);
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.8125rem;              /* 13px — the admin's base size */
+    --text-sm--line-height: 1.25rem;
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+        font-feature-settings: 'cv11', 'ss01';
+    }
+
+    body {
+        font-size: var(--text-sm);
+        line-height: 1.25rem;
+    }
+
+    [dir='rtl'] body {
+        font-family: var(--font-arabic);
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-brand-600);
+        outline-offset: 1px;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    /* Tailwind v4 no longer gives buttons a pointer cursor; bring it back for everything clickable. */
+    button:not(:disabled),
+    [role='button']:not([aria-disabled='true']),
+    input:is([type='checkbox'], [type='radio'], [type='submit'], [type='button'], [type='reset'], [type='file'], [type='color']):not(:disabled),
+    input[type='file']::file-selector-button,
+    select:not(:disabled),
+    summary,
+    label[for] {
+        cursor: pointer;
+    }
+
+    :is(button, input, select):disabled {
+        cursor: not-allowed;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;   /* a looping animation would otherwise spin at full speed */
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+@layer components {
+    .admin-field {
+        @apply block w-full rounded-lg border border-[#8a8a8a]/60 bg-surface px-3 py-1.5 text-sm text-ink transition
+            placeholder:text-[#8a8a8a]
+            hover:border-[#546156]
+            focus:border-brand-600 focus:ring-1 focus:ring-brand-600 focus:outline-none
+            disabled:cursor-not-allowed disabled:border-line disabled:bg-subdued disabled:text-muted;
+        min-height: 2rem;
+    }
+
+    .admin-field-error {
+        @apply border-danger-600 bg-danger-50 focus:border-danger-600 focus:ring-danger-600;
+    }
+
+    /* Index tables (orders, products, customers…) */
+    .admin-table {
+        @apply w-full border-collapse text-sm;
+    }
+    .admin-table thead th {
+        @apply border-b border-line bg-subdued px-3 py-2 text-start text-xs font-medium whitespace-nowrap text-muted;
+    }
+    .admin-table tbody td {
+        @apply border-b border-line px-3 py-2.5 align-middle;
+    }
+    .admin-table tbody tr {
+        @apply transition-colors;
+    }
+    .admin-table tbody tr:hover {
+        @apply bg-subdued;
+    }
+    .admin-table tbody tr:last-child td {
+        @apply border-b-0;
+    }
+    .admin-table tbody tr[data-selected='true'] {
+        @apply bg-brand-50/60;
+    }
+
+    .admin-checkbox {
+        @apply size-4 cursor-pointer rounded border-line-strong accent-ink-strong;
+    }
+
+    .admin-kbd {
+        @apply inline-flex h-5 min-w-5 items-center justify-center rounded border border-white/15 bg-white/5 px-1 font-sans text-[11px] text-white/60;
+    }
+}
+
+/* HTML editor: the plain text box shown until TinyMCE loads (styles for TinyMCE itself are in
+   resources/js/admin/tinymce-admin.css, loaded with the editor). */
+@layer components {
+    textarea.admin-rich {
+        min-height: 10rem;
+    }
+}
+
+.admin-auth {
+    background: radial-gradient(ellipse at 50% 22%, var(--color-brand-50), var(--color-canvas) 58%);
+}
+
+.admin-kpi {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-width: 0;
+    background: linear-gradient(145deg, var(--color-topbar-field), var(--color-topbar) 80%);
+    color: var(--color-brand-50);
+    box-shadow: var(--shadow-card);
+}
+
+.admin-kpi-mark {
+    position: absolute;
+    z-index: -1;
+    inset-block-end: -1rem;
+    inset-inline-end: -.75rem;
+    width: 6rem;
+    height: 6rem;
+    opacity: .09;
+    rotate: -12deg;
+}
+
+.admin-kpis:hover .admin-kpi {
+    background: linear-gradient(145deg, var(--color-brand-600), var(--color-topbar) 80%);
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Daily Basket",
+    "short_name": "Daily Basket",
+    "icons": [
+        {
+            "src": "favicon-180.png?v=2",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#23633F",
+    "background_color": "#FFF9F0",
+    "display": "browser"
+}

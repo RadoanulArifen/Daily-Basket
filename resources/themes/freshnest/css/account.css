@@ -1,0 +1,14 @@
+/* The design's account styles (freshnest-html account <helmet>). */
+*, *::before, *::after { box-sizing:border-box; }
+.acc-g { display:grid; grid-template-columns:minmax(0,1fr); gap:20px; }
+@media (min-width:1024px) { .acc-g { grid-template-columns:290px minmax(0,1fr); gap:28px; align-items:start; } }
+.acc-nav { display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+.acc-nav::-webkit-scrollbar { display:none; }
+@media (min-width:1024px) { .acc-nav { flex-direction:column; overflow:visible; } }
+.f2 { display:grid; grid-template-columns:minmax(0,1fr); gap:16px; }
+@media (min-width:700px) { .f2 { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+.stat4 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+@media (min-width:900px) { .stat4 { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+.wgrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+@media (min-width:900px) { .wgrid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (min-width:1400px) { .wgrid { grid-template-columns:repeat(4,minmax(0,1fr)); } }

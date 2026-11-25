@@ -1,0 +1,121 @@
+<?php
+
+// Guided tours: the admin's tours (admin.*), the shopper tour on the storefront (store.*) and the
+// popup buttons. Steps are listed in App\Services\Tours\AdminTourCatalog and StorefrontTour.
+return [
+    'menu_label' => 'Help and guided tours',
+    'title' => 'Guided tours',
+    'intro' => 'Short walk-throughs on the real pages.',
+    'done_count' => ':done of :total done',
+    'steps_count' => '{1} 1 step|[2,*] :count steps',
+    'minutes' => 'about :count min',
+    'status' => [
+        'done' => 'Done',
+        'started' => 'Step :step of :total',
+        'needs_order' => 'Needs an order first',
+    ],
+    'actions' => [
+        'start' => 'Start',
+        'continue' => 'Continue',
+        'restart' => 'Restart',
+        'show_welcome' => 'Show the welcome screen',
+        'reset' => 'Reset all tours',
+        'reset_confirm' => 'Start every tour from the beginning again?',
+    ],
+    'welcome' => [
+        'badge' => 'Guided tours',
+        'title' => 'Welcome to your store admin',
+        'text' => 'Pick a short tour. Each one points at the real buttons on the real pages. Stop any time, and restart it later from the ? menu at the top.',
+        'never' => "Don't show this again",
+        'later' => 'Not now',
+        'start' => 'Start tour',
+    ],
+    'popup' => [
+        'step_of' => 'Step :step of :total',
+        'next' => 'Next',
+        'back' => 'Back',
+        'finish' => 'Finish',
+        'skip' => 'Skip tour',
+        'close' => 'Close tour',
+        'paused_title' => 'Tour paused',
+        'resume' => 'Continue',
+        'not_here' => 'This part is not on the screen right now; press Next to carry on.',
+    ],
+    'finished' => 'Tour finished: :name',
+    'next_up' => 'Next up: :name',
+    'paused' => 'Tour paused. Continue it any time from the ? menu at the top.',
+    'reset_done' => 'All tours start from the beginning again.',
+
+    'admin' => [
+        'product' => [
+            'name' => 'Add your first product',
+            'summary' => 'Name, photos, pack sizes, price and stock.',
+            'steps' => [
+                'menu' => ['title' => 'Products live here', 'text' => 'Everything you sell is under Products: the list, categories, brands and stock levels. Click Products, or press Next.'],
+                'add' => ['title' => 'Every product starts here', 'text' => 'Click Add product. The tour waits for you on the next page and carries on there.'],
+                'details' => ['title' => 'Name and description', 'text' => 'Give the product a clear name and describe it. Switch to Arabic in the same box to add the translation.'],
+                'media' => ['title' => 'Images', 'text' => 'Drag photos here or pick them from the media library. The first photo is the one shoppers see in lists.'],
+                'options' => ['title' => 'Pack sizes and prices', 'text' => 'Add an option such as "Pack size" with values like 500 g and 1 kg. Each one gets its own price, SKU and stock.'],
+                'status' => ['title' => 'Publish it', 'text' => 'Set the status to Active when it is ready to sell, then press Save product at the top. Draft keeps it hidden from the store.'],
+            ],
+        ],
+        'order' => [
+            'name' => 'Handle a new order',
+            'summary' => 'Mark paid, fulfil, add tracking, refund.',
+            'steps' => [
+                'menu' => ['title' => 'Your orders', 'text' => 'New orders, returns and draft orders are all under Orders. Click it, or press Next.'],
+                'row' => ['title' => 'Open an order', 'text' => 'The newest orders are at the top. Click a row to open the order; the tour carries on there.'],
+                'payment' => ['title' => 'Payment', 'text' => 'See what was paid and how. For cash on delivery, use Mark as paid once the courier hands you the money.'],
+                'fulfill' => ['title' => 'Ship it', 'text' => 'When the bag is packed, press Fulfill items. You can add a tracking number, and the customer gets an e-mail.'],
+                'timeline' => ['title' => 'Timeline', 'text' => 'Every step of the order is logged here, with who did it. Add a note your team can see.'],
+                'more' => ['title' => 'More actions', 'text' => 'Refund or print the invoice with the buttons at the top; under More actions you can re-send the confirmation e-mail or cancel the order from here.'],
+                'customer' => ['title' => 'The customer', 'text' => 'Contact details and the delivery address. Click the name to see all their orders.'],
+            ],
+        ],
+        'payments' => [
+            'name' => 'Set up payments and delivery',
+            'summary' => 'Stripe, cash on delivery, rates, countries.',
+            'steps' => [
+                'menu' => ['title' => 'Settings', 'text' => 'Store details, payments, delivery, taxes and e-mails are all in Settings. Click it, or press Next.'],
+                'card' => ['title' => 'Payments', 'text' => 'Open Payments to choose how shoppers pay.'],
+                'cod' => ['title' => 'Cash on delivery', 'text' => 'Switch cash on delivery on or off, and set an optional fee for it.'],
+                'stripe' => ['title' => 'Card payments', 'text' => 'Turn on card payments through Stripe. Shoppers pay on Stripe\'s secure page.'],
+                'keys' => ['title' => 'Your Stripe keys', 'text' => 'Paste the publishable and secret keys from your Stripe dashboard here. Use test keys first, then live keys.'],
+                'rates' => ['title' => 'Delivery rate', 'text' => 'Set the name and price of your standard delivery. It shows at checkout.'],
+                'free' => ['title' => 'Free delivery', 'text' => 'Offer free delivery above an order amount — the store shows shoppers how much is left.'],
+                'countries' => ['title' => 'Countries', 'text' => 'Tick the countries you deliver to. They are the only ones shoppers can pick at checkout.'],
+            ],
+        ],
+        'storefront' => [
+            'name' => 'Edit your storefront',
+            'summary' => 'Homepage sections, banners, menus, pages.',
+            'steps' => [
+                'menu' => ['title' => 'Online Store', 'text' => 'How your shop looks is set under Online Store. Click it, or press Next.'],
+                'customize' => ['title' => 'Customize', 'text' => 'Press Customize to change colours, fonts, the announcement and the homepage sections.'],
+                'sections' => ['title' => 'Homepage sections', 'text' => 'Show, hide and reorder the sections of your homepage with the arrows and switches.'],
+                'preview' => ['title' => 'Live preview', 'text' => 'Your changes show here before shoppers see them. Switch between desktop and phone.'],
+                'publish' => ['title' => 'Publish', 'text' => 'Save keeps your changes as a private draft. Publish puts them live on the store.'],
+                'banners' => ['title' => 'Banners', 'text' => 'The big pictures and offers on the homepage are banners. Add one, set its text, link and dates.'],
+                'menus' => ['title' => 'Menus', 'text' => 'Edit the header and footer menus here: add links to categories, pages or any address.'],
+            ],
+        ],
+    ],
+
+    'store' => [
+        'launcher' => 'Take the 1-minute tour',
+        'label' => 'Quick tour',
+        'step_of' => ':step of :total',
+        'next' => 'Next',
+        'back' => 'Back',
+        'finish' => 'Done',
+        'skip' => 'Skip',
+        'close' => 'Close tour',
+        'steps' => [
+            'search' => ['title' => 'Find anything in seconds', 'text' => 'Type a product, like "avocado" or "sourdough". Results show prices, pack sizes and what is in stock.'],
+            'categories' => ['title' => 'Browse by aisle', 'text' => 'All Categories opens every aisle of the shop: fruit, vegetables, dairy, bakery and more.'],
+            'options' => ['title' => 'Pick a size', 'text' => 'Choose the pack size you want. The price updates straight away.'],
+            'add' => ['title' => 'Add to cart', 'text' => 'Set the quantity and add it to your cart. Keep shopping, your cart is saved.'],
+            'checkout' => ['title' => 'Check out', 'text' => 'Review your cart, see how much is left for free delivery, then check out as a guest or with an account.'],
+        ],
+    ],
+];

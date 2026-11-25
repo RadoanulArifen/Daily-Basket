@@ -1,0 +1,8 @@
+# Install with:  sudo crontab -u www-data /var/www/vibe-ecommerce/deploy/crontab
+# (or add these lines with: sudo crontab -u www-data -e)
+
+# Laravel scheduler: cancels unpaid card orders, cleans old carts/logs, heartbeat — every minute.
+* * * * * cd /var/www/vibe-ecommerce && php artisan schedule:run >> /dev/null 2>&1
+
+# Nightly backup of the database and uploaded images at 02:30 (UAE time if the server uses Asia/Dubai).
+30 2 * * * /var/www/vibe-ecommerce/deploy/backup.sh >> /var/www/vibe-ecommerce/storage/logs/backup.log 2>&1

@@ -1,0 +1,1330 @@
+{
+ "CATEGORIES": [
+  {
+   "name": "Fruits",
+   "slug": "fruits",
+   "key": "fruit",
+   "photo": "1610832958506-aa56368176cf",
+   "placeholder": "cat-fruit.png"
+  },
+  {
+   "name": "Vegetables",
+   "slug": "vegetables",
+   "key": "veg",
+   "photo": "1540420773420-3366772f4999",
+   "placeholder": "cat-veg.png"
+  },
+  {
+   "name": "Dairy & Eggs",
+   "slug": "dairy",
+   "key": "dairy",
+   "photo": "1628088062854-d1870b4553da",
+   "placeholder": "cat-dairy.png"
+  },
+  {
+   "name": "Bakery",
+   "slug": "bakery",
+   "key": "bakery",
+   "photo": "1509440159596-0249088772ff",
+   "placeholder": "cat-bakery.png"
+  },
+  {
+   "name": "Meat & Fish",
+   "slug": "meat-fish",
+   "key": "meat",
+   "photo": "1544025162-d76694265947",
+   "placeholder": "cat-meat.png"
+  },
+  {
+   "name": "Beverages",
+   "slug": "beverages",
+   "key": "drinks",
+   "photo": "1600271886742-f049cd451bba",
+   "placeholder": "cat-drinks.png"
+  },
+  {
+   "name": "Snacks",
+   "slug": "snacks",
+   "key": "snacks",
+   "photo": "1599490659213-e2b9527bd087",
+   "placeholder": "cat-snacks.png"
+  },
+  {
+   "name": "Organic Pantry",
+   "slug": "pantry",
+   "key": "pantry",
+   "photo": "1586201375761-83865001e31c",
+   "placeholder": "cat-pantry.png"
+  }
+ ],
+ "GROWERS": [
+  {
+   "slug": "sunridge-orchards",
+   "name": "Sunridge Orchards",
+   "cat": "fruits",
+   "origin": "Sonoma County, CA",
+   "blurb": "Stone fruit, apples and citrus from a family orchard in Sonoma.",
+   "photo": "1464965911861-746a04b4bca6"
+  },
+  {
+   "slug": "two-creeks-farm",
+   "name": "Two Creeks Farm",
+   "cat": "vegetables",
+   "origin": "Half Moon Bay, CA",
+   "blurb": "Roots, greens and brassicas grown on 40 acres near Half Moon Bay.",
+   "photo": "1500937386664-56d1dfef3854"
+  },
+  {
+   "slug": "hollow-creek-dairy",
+   "name": "Hollow Creek Dairy",
+   "cat": "dairy",
+   "origin": "Petaluma, CA",
+   "blurb": "Grass-fed milk, cultured butter and yoghurt from a 60-cow herd.",
+   "photo": "1628088062854-d1870b4553da"
+  },
+  {
+   "slug": "mill-lane-bakehouse",
+   "name": "Mill Lane Bakehouse",
+   "cat": "bakery",
+   "origin": "Baked in San Francisco",
+   "blurb": "Slow-proved sourdough and pastries from heritage wheat.",
+   "photo": "1509440159596-0249088772ff"
+  }
+ ],
+ "SHORT": {
+  "fruits": "Picked ripe at {farm} and in our cold room within hours. Sweet, fragrant and certified organic, with no wax coatings.",
+  "vegetables": "Pulled from the soil at {farm} this morning. Crisp, full-flavoured and grown without synthetic pesticides.",
+  "dairy": "From grass-fed herds at {farm}. Gently pasteurised, never homogenised, bottled the day it is collected.",
+  "bakery": "Slow-proved overnight at {farm} using stone-milled organic flour, sea salt and nothing else you cannot pronounce."
+ },
+ "PACKS": {
+  "labels": [
+   "{weight}",
+   "2 × {weight}",
+   "Family pack"
+  ],
+  "multipliers": [
+   1,
+   1.9,
+   3.4
+  ]
+ },
+ "PRODUCTS": [
+  {
+   "id": 1,
+   "name": "Organic Hass Avocado",
+   "cat": "fruits",
+   "weight": "500 g · 3 pcs",
+   "price": 4.2,
+   "old": 5.6,
+   "rating": 4.8,
+   "reviews": 312,
+   "photo": "1523049673857-eb18f1d7b578",
+   "stock": 19,
+   "sku": "GRC-1037"
+  },
+  {
+   "id": 2,
+   "name": "Baby Leaf Spinach",
+   "cat": "vegetables",
+   "weight": "250 g bag",
+   "price": 2.1,
+   "old": 2.8,
+   "rating": 4.7,
+   "reviews": 208,
+   "photo": "1576045057995-568f588f82fb",
+   "stock": 26,
+   "sku": "GRC-1074"
+  },
+  {
+   "id": 3,
+   "name": "Free-Range Eggs",
+   "cat": "dairy",
+   "weight": "12 pcs",
+   "price": 5.4,
+   "old": 6.9,
+   "rating": 4.9,
+   "reviews": 874,
+   "photo": "1506976785307-8732e854ad03",
+   "stock": 33,
+   "sku": "GRC-1111"
+  },
+  {
+   "id": 4,
+   "name": "Sourdough Country Loaf",
+   "cat": "bakery",
+   "weight": "800 g",
+   "price": 6.0,
+   "old": 7.5,
+   "rating": 4.8,
+   "reviews": 146,
+   "photo": "1549931319-a545dcf3bc73",
+   "stock": 40,
+   "sku": "GRC-1148"
+  },
+  {
+   "id": 5,
+   "name": "Heirloom Tomatoes",
+   "cat": "vegetables",
+   "weight": "1 kg",
+   "price": 3.9,
+   "old": 5.2,
+   "rating": 4.6,
+   "reviews": 191,
+   "photo": "1546094096-0df4bcaaa337",
+   "stock": 17,
+   "sku": "GRC-1185"
+  },
+  {
+   "id": 6,
+   "name": "Alphonso Mangoes",
+   "cat": "fruits",
+   "weight": "6 pcs crate",
+   "price": 9.8,
+   "old": 12.0,
+   "rating": 4.9,
+   "reviews": 402,
+   "photo": "1553279768-865429fa0078",
+   "stock": 24,
+   "sku": "GRC-1222"
+  },
+  {
+   "id": 7,
+   "name": "Grass-Fed Whole Milk",
+   "cat": "dairy",
+   "weight": "1 L bottle",
+   "price": 2.6,
+   "old": 3.2,
+   "rating": 4.7,
+   "reviews": 523,
+   "photo": "1563636619-e9143da7973b",
+   "stock": 31,
+   "sku": "GRC-1259"
+  },
+  {
+   "id": 8,
+   "name": "Almond Croissants",
+   "cat": "bakery",
+   "weight": "4 pcs",
+   "price": 5.2,
+   "old": 6.4,
+   "rating": 4.8,
+   "reviews": 97,
+   "photo": "1555507036-ab1f4038808a",
+   "stock": 38,
+   "sku": "GRC-1296"
+  },
+  {
+   "id": 9,
+   "name": "Pink Lady Apples",
+   "cat": "fruits",
+   "weight": "1.2 kg",
+   "price": 4.6,
+   "old": 5.8,
+   "rating": 4.7,
+   "reviews": 265,
+   "photo": "1560806887-1e4cd0b6cbd6",
+   "stock": 15,
+   "sku": "GRC-1333"
+  },
+  {
+   "id": 10,
+   "name": "Rainbow Chard",
+   "cat": "vegetables",
+   "weight": "400 g bunch",
+   "price": 2.9,
+   "old": 3.6,
+   "rating": 4.5,
+   "reviews": 88,
+   "photo": "1540420773420-3366772f4999",
+   "stock": 22,
+   "sku": "GRC-1370"
+  },
+  {
+   "id": 11,
+   "name": "Farmhouse Butter",
+   "cat": "dairy",
+   "weight": "250 g",
+   "price": 4.1,
+   "old": 4.9,
+   "rating": 4.8,
+   "reviews": 331,
+   "photo": "1589985270826-4b7bb135bc9d",
+   "stock": 29,
+   "sku": "GRC-1407"
+  },
+  {
+   "id": 12,
+   "name": "Seeded Rye Bread",
+   "cat": "bakery",
+   "weight": "700 g",
+   "price": 5.5,
+   "old": 6.8,
+   "rating": 4.6,
+   "reviews": 74,
+   "photo": "1509440159596-0249088772ff",
+   "stock": 36,
+   "sku": "GRC-1444"
+  },
+  {
+   "id": 13,
+   "name": "Blueberry Punnet",
+   "cat": "fruits",
+   "weight": "300 g",
+   "price": 5.9,
+   "old": 7.2,
+   "rating": 4.9,
+   "reviews": 518,
+   "photo": "1498557850523-fd3d118b962e",
+   "stock": 13,
+   "sku": "GRC-1481"
+  },
+  {
+   "id": 14,
+   "name": "Purple Sprouting Broccoli",
+   "cat": "vegetables",
+   "weight": "500 g",
+   "price": 3.4,
+   "old": 4.3,
+   "rating": 4.5,
+   "reviews": 63,
+   "photo": "1459411621453-7b03977f4bfc",
+   "stock": 20,
+   "sku": "GRC-1518"
+  },
+  {
+   "id": 15,
+   "name": "Natural Greek Yoghurt",
+   "cat": "dairy",
+   "weight": "500 g tub",
+   "price": 3.8,
+   "old": 4.6,
+   "rating": 4.8,
+   "reviews": 289,
+   "photo": "1488477181946-6428a0291777",
+   "stock": 27,
+   "sku": "GRC-1555"
+  },
+  {
+   "id": 16,
+   "name": "Cinnamon Morning Buns",
+   "cat": "bakery",
+   "weight": "6 pcs",
+   "price": 6.4,
+   "old": 7.9,
+   "rating": 4.9,
+   "reviews": 156,
+   "photo": "1509365465985-25d11c17e812",
+   "stock": 34,
+   "sku": "GRC-1592"
+  }
+ ],
+ "PAGES": {
+  "shop": {
+   "title": "Shop",
+   "cat": null,
+   "blurb": "Every aisle in one place. Certified organic, harvested within 48 hours, delivered same day."
+  },
+  "fruits": {
+   "title": "Fruits",
+   "cat": "Fruits",
+   "blurb": "Tree-ripened and picked at dawn. Stone fruit, berries, citrus and orchard classics from growers within 80 miles."
+  },
+  "vegetables": {
+   "title": "Vegetables",
+   "cat": "Vegetables",
+   "blurb": "Roots, greens and brassicas pulled from the soil this morning and packed in compostable crates."
+  },
+  "dairy": {
+   "title": "Dairy",
+   "cat": "Dairy",
+   "blurb": "Grass-fed milk, cultured butter and free-range eggs from Hollow Creek and three neighbouring farms."
+  },
+  "bakery": {
+   "title": "Bakery",
+   "cat": "Bakery",
+   "blurb": "Slow-proved loaves and laminated pastries baked overnight, on your doorstep before breakfast."
+  },
+  "offers": {
+   "title": "Offers",
+   "cat": null,
+   "blurb": "Every live discount, member deal and bundle, in one list. New offers land each Thursday."
+  },
+  "contact": {
+   "title": "Contact",
+   "cat": null,
+   "blurb": "Questions about an order, a product or becoming a grower? Reach the team directly."
+  },
+  "cart": {
+   "title": "Cart",
+   "cat": null,
+   "blurb": "Review your basket, adjust quantities and check out. Free delivery on orders over $50."
+  },
+  "track-order": {
+   "title": "Track Order",
+   "cat": null,
+   "blurb": "Enter your order number to see where your groceries are right now."
+  },
+  "faq": {
+   "title": "FAQs",
+   "cat": null,
+   "blurb": "Answers to the questions we hear most about orders, delivery and our growers."
+  },
+  "blog": {
+   "title": "Blog",
+   "cat": null,
+   "blurb": "Seasonal recipes, harvest notes and stories from the farms that supply us."
+  },
+  "blog-details": {
+   "title": "Blog Details",
+   "cat": null,
+   "blurb": "From the Daily Basket kitchen and fields."
+  },
+  "delivery-info": {
+   "title": "Delivery Info",
+   "cat": null,
+   "blurb": "How, when and where we deliver, and what it costs."
+  },
+  "returns-refunds": {
+   "title": "Returns & Refunds",
+   "cat": null,
+   "blurb": "If something isn't right, we'll replace it or refund you. No questions asked."
+  },
+  "gift-cards": {
+   "title": "Gift Cards",
+   "cat": null,
+   "blurb": "Send fresh, organic groceries to someone you care about. Delivered instantly by email."
+  },
+  "our-growers": {
+   "title": "Our Growers",
+   "cat": null,
+   "blurb": "Every product comes from a named farm within 80 miles of our depot."
+  },
+  "sustainability": {
+   "title": "Sustainability",
+   "cat": null,
+   "blurb": "Plastic-free packaging, carbon-neutral routes and fair prices paid to growers."
+  },
+  "careers": {
+   "title": "Careers",
+   "cat": null,
+   "blurb": "Join the team getting fresh food from local farms to local doors."
+  },
+  "privacy-policy": {
+   "title": "Privacy Policy",
+   "cat": null,
+   "blurb": "How Daily Basket collects, uses and protects your personal information. Last updated September 1, 2026."
+  },
+  "terms-conditions": {
+   "title": "Terms & Conditions",
+   "cat": null,
+   "blurb": "The terms that apply when you use Daily Basket and place an order. Last updated September 1, 2026."
+  },
+  "store-locator": {
+   "title": "Store Locator",
+   "cat": null,
+   "blurb": "Visit a Daily Basket depot for click-and-collect or to meet the team."
+  }
+ },
+ "INFO": {
+  "delivery-info": {
+   "stats": [
+    {
+     "v": "45 min",
+     "l": "Average delivery time"
+    },
+    {
+     "v": "$50",
+     "l": "Free delivery threshold"
+    },
+    {
+     "v": "7am–10pm",
+     "l": "Delivery hours, every day"
+    }
+   ],
+   "sections": [
+    {
+     "h": "Delivery areas",
+     "b": "We deliver across San Francisco, Oakland, Berkeley and San Jose. Enter your postcode at checkout to confirm coverage."
+    },
+    {
+     "h": "Delivery slots",
+     "b": "Choose express delivery in 45 minutes or book a two-hour slot up to seven days ahead. Slots can be changed until your order is packed."
+    },
+    {
+     "h": "Fees",
+     "b": "Delivery is free on orders over $50. Orders below $50 have a flat $4.99 fee. There is no minimum order."
+    },
+    {
+     "h": "If you're not home",
+     "b": "Chilled items are packed in insulated liners and stay cold for four hours. Add safe-place instructions at checkout."
+    }
+   ],
+   "cards": []
+  },
+  "returns-refunds": {
+   "stats": [
+    {
+     "v": "48 hrs",
+     "l": "To report an issue"
+    },
+    {
+     "v": "100%",
+     "l": "Refund on quality issues"
+    },
+    {
+     "v": "3–5 days",
+     "l": "Card refund time"
+    }
+   ],
+   "sections": [
+    {
+     "h": "Quality guarantee",
+     "b": "If any product isn't fresh or up to standard, we'll refund it in full. You don't need to send it back."
+    },
+    {
+     "h": "How to request a refund",
+     "b": "Open My Orders, select the order and choose Report an issue. Add a photo if you can. Most requests are approved instantly."
+    },
+    {
+     "h": "Refund methods",
+     "b": "Refunds go back to your original payment method in 3–5 working days, or instantly as Daily Basket credit."
+    },
+    {
+     "h": "Missing items",
+     "b": "If an item is missing, we'll refund it or deliver it free on your next order, whichever you prefer."
+    }
+   ],
+   "cards": []
+  },
+  "our-growers": {
+   "stats": [
+    {
+     "v": "42",
+     "l": "Partner farms"
+    },
+    {
+     "v": "80 mi",
+     "l": "Maximum distance from depot"
+    },
+    {
+     "v": "48 hrs",
+     "l": "Field to door"
+    }
+   ],
+   "sections": [
+    {
+     "h": "How we choose growers",
+     "b": "Every farm is certified organic and visited by our sourcing team before we list their produce."
+    },
+    {
+     "h": "Fair prices",
+     "b": "Growers set their own prices and are paid within seven days. We don't ask for listing fees or promotional contributions."
+    }
+   ],
+   "cards": [
+    {
+     "tag": "Fruit",
+     "title": "Sunridge Orchards",
+     "body": "Stone fruit, apples and citrus from a family orchard in Sonoma.",
+     "img": "1464965911861-746a04b4bca6"
+    },
+    {
+     "tag": "Vegetables",
+     "title": "Two Creeks Farm",
+     "body": "Roots, greens and brassicas grown on 40 acres near Half Moon Bay.",
+     "img": "1500937386664-56d1dfef3854"
+    },
+    {
+     "tag": "Dairy",
+     "title": "Hollow Creek Dairy",
+     "body": "Grass-fed milk, cultured butter and yoghurt from a 60-cow herd.",
+     "img": "1628088062854-d1870b4553da"
+    },
+    {
+     "tag": "Bakery",
+     "title": "Mill Lane Bakehouse",
+     "body": "Slow-proved sourdough and pastries from heritage wheat.",
+     "img": "1509440159596-0249088772ff"
+    }
+   ]
+  },
+  "privacy-policy": {
+   "stats": [],
+   "sections": [
+    {
+     "h": "Information we collect",
+     "b": "Your name, email, phone number, delivery addresses and order history. Payment details are handled by our payment provider and never stored on our servers."
+    },
+    {
+     "h": "How we use it",
+     "b": "To process and deliver orders, provide customer support, send order updates and, if you opt in, share offers and harvest notes."
+    },
+    {
+     "h": "Sharing",
+     "b": "We share only what is needed with delivery partners and payment processors. We never sell your personal data."
+    },
+    {
+     "h": "Cookies",
+     "b": "We use essential cookies to keep you signed in and remember your basket, plus optional analytics cookies you can turn off in Settings."
+    },
+    {
+     "h": "Data retention",
+     "b": "Order records are kept for seven years for tax purposes. Other account data is deleted within 30 days of closing your account."
+    },
+    {
+     "h": "Your rights",
+     "b": "You can access, correct, export or delete your data at any time from your account, or by emailing privacy@dailybasket.example."
+    },
+    {
+     "h": "Contact",
+     "b": "Daily Basket, 18 Meadow Row, San Francisco, CA 94110. Email privacy@dailybasket.example with any questions about this policy."
+    }
+   ],
+   "cards": []
+  },
+  "terms-conditions": {
+   "stats": [],
+   "sections": [
+    {
+     "h": "Using Daily Basket",
+     "b": "By creating an account or placing an order you agree to these terms. You must be 18 or older to place an order."
+    },
+    {
+     "h": "Orders and pricing",
+     "b": "Prices include applicable taxes and are confirmed at checkout. Fresh items are priced by the listed weight and may vary slightly."
+    },
+    {
+     "h": "Substitutions",
+     "b": "If an item is unavailable we may offer a similar substitute. You can reject any substitute at the door for a full refund."
+    },
+    {
+     "h": "Delivery",
+     "b": "We aim to deliver within the chosen slot. If we are late by more than 30 minutes, your delivery fee is refunded automatically."
+    },
+    {
+     "h": "Cancellations",
+     "b": "You can cancel free of charge until your order is packed. After that, cancellation may not be possible."
+    },
+    {
+     "h": "Gift cards and promotions",
+     "b": "Gift cards are valid for 24 months and cannot be exchanged for cash. Promo codes cannot be combined unless stated."
+    },
+    {
+     "h": "Liability",
+     "b": "Our liability is limited to the value of your order, except where the law does not allow this limitation."
+    },
+    {
+     "h": "Changes to these terms",
+     "b": "We may update these terms. Significant changes will be emailed to you at least 14 days before they take effect."
+    }
+   ],
+   "cards": []
+  },
+  "sustainability": {
+   "stats": [
+    {
+     "v": "38 t",
+     "l": "Plastic avoided last year"
+    },
+    {
+     "v": "100%",
+     "l": "Electric delivery fleet"
+    },
+    {
+     "v": "0",
+     "l": "Food waste to landfill"
+    }
+   ],
+   "sections": [
+    {
+     "h": "Packaging",
+     "b": "Returnable crates and home-compostable liners replace single-use plastic across every order."
+    },
+    {
+     "h": "Transport",
+     "b": "Our vans are fully electric and routes are planned to minimise miles. Remaining emissions are offset through verified projects."
+    },
+    {
+     "h": "Food waste",
+     "b": "Unsold produce goes to local food banks each evening. Anything left is composted and returned to partner farms."
+    },
+    {
+     "h": "Reporting",
+     "b": "We publish an impact report every year with our packaging, emissions and waste figures."
+    }
+   ],
+   "cards": []
+  }
+ },
+ "FAQS": [
+  [
+   "How fast is delivery?",
+   "Most orders arrive within 45 minutes in San Francisco. You can also book a two-hour slot up to seven days ahead."
+  ],
+  [
+   "Is everything certified organic?",
+   "Yes. Every fresh product is certified organic and comes from a named grower within 80 miles of our depot."
+  ],
+  [
+   "What does delivery cost?",
+   "Delivery is free on orders over $50. Below that, a flat $4.99 fee applies."
+  ],
+  [
+   "What if an item is damaged or missing?",
+   "Report it in your account within 48 hours and we'll refund or replace it on your next order."
+  ],
+  [
+   "Can I change my order after placing it?",
+   "You can add or remove items until your order is packed, usually 30 minutes before the delivery slot."
+  ],
+  [
+   "Do you take back packaging?",
+   "Yes. Leave crates at the door on your next delivery and the driver will collect them."
+  ],
+  [
+   "Which payment methods do you accept?",
+   "Visa, Mastercard, American Express, Apple Pay, Google Pay and Daily Basket gift cards."
+  ],
+  [
+   "How do I become a grower?",
+   "Email growers@dailybasket.example with your farm details and certification. We visit every new supplier before listing their produce."
+  ]
+ ],
+ "JOBS": [
+  [
+   "Delivery Driver",
+   "Logistics",
+   "San Francisco",
+   "Full-time"
+  ],
+  [
+   "Warehouse Picker",
+   "Operations",
+   "San Francisco",
+   "Part-time"
+  ],
+  [
+   "Produce Buyer",
+   "Sourcing",
+   "San Francisco",
+   "Full-time"
+  ],
+  [
+   "Customer Support Specialist",
+   "Customer Care",
+   "Remote (US)",
+   "Full-time"
+  ],
+  [
+   "Senior Frontend Engineer",
+   "Technology",
+   "Hybrid, SF",
+   "Full-time"
+  ]
+ ],
+ "BANNERS": [
+  {
+   "placement": "hero",
+   "eyebrow": "Harvested this morning",
+   "title": "Premium Organic Produce, |Delivered Daily",
+   "text": "Farm-fresh produce from local growers, delivered the same day.",
+   "button": "Shop Now",
+   "url": "/shop",
+   "photo": "1542838132-92c53300491e"
+  },
+  {
+   "placement": "hero_stat",
+   "title": "80 mi",
+   "text": "Local growers"
+  },
+  {
+   "placement": "hero_stat",
+   "title": "45 min",
+   "text": "Express delivery"
+  },
+  {
+   "placement": "hero_stat",
+   "title": "100%",
+   "text": "Certified organic"
+  },
+  {
+   "placement": "weekend",
+   "eyebrow": "Weekend only",
+   "title": "Weekend Savings Bonanza",
+   "text": "30% OFF|On all organic fruits & vegetables this weekend.",
+   "button": "Grab the Deal",
+   "url": "/pages/offers",
+   "photo": "1540420773420-3366772f4999",
+   "ends": "weekend"
+  },
+  {
+   "placement": "side_promo",
+   "eyebrow": "Dairy aisle",
+   "title": "Fresh Dairy",
+   "text": "Grass-fed milk, farmhouse yoghurt and free-range eggs from Hollow Creek Dairy.",
+   "button": "Shop Dairy",
+   "url": "/collections/dairy",
+   "photo": "1628088062854-d1870b4553da"
+  },
+  {
+   "placement": "picks_promo",
+   "eyebrow": "New arrivals",
+   "title": "Cold-pressed juices",
+   "text": "Bottled the morning you order",
+   "button": "Shop now",
+   "url": "/collections/beverages"
+  },
+  {
+   "placement": "picks_promo",
+   "eyebrow": "Pantry week",
+   "title": "Ancient grains & pulses",
+   "text": "Save up to 25% on bulk jars",
+   "button": "Shop now",
+   "url": "/collections/pantry"
+  },
+  {
+   "placement": "picks_promo",
+   "eyebrow": "Local growers",
+   "title": "Meet the Hollow Creek farm",
+   "text": "Eggs, cream and butter, daily",
+   "button": "Shop now",
+   "url": "/brands/hollow-creek-dairy"
+  },
+  {
+   "placement": "deal",
+   "eyebrow": "Resets at midnight",
+   "title": "Deal of the |Day",
+   "text": "One hero product at its lowest price, plus daily essentials marked down until the clock runs out.",
+   "url": "/products/almond-croissants"
+  },
+  {
+   "placement": "promo_row",
+   "eyebrow": "Everyday fresh",
+   "title": "Crisp greens, 25% off",
+   "button": "Shop Now",
+   "url": "/collections/vegetables",
+   "photo": "1540420773420-3366772f4999"
+  },
+  {
+   "placement": "promo_row",
+   "eyebrow": "Weekend only",
+   "title": "Juicy fruit from $3.90",
+   "button": "Shop Now",
+   "url": "/collections/fruits",
+   "photo": "1498557850523-fd3d118b962e"
+  },
+  {
+   "placement": "promo_row",
+   "eyebrow": "Buy 2 Get 1",
+   "title": "Farm dairy & eggs",
+   "button": "Shop Now",
+   "url": "/collections/dairy",
+   "photo": "1563636619-e9143da7973b"
+  },
+  {
+   "placement": "seasonal",
+   "eyebrow": "Seasonal Fruit",
+   "title": "Up to 25% off fresh berries",
+   "button": "Shop Fruits",
+   "url": "/collections/fruits",
+   "photo": "1610832958506-aa56368176cf"
+  },
+  {
+   "placement": "newsletter",
+   "eyebrow": "Join 40,000+ home cooks",
+   "title": "Get 10% Off Your First Order",
+   "text": "Weekly harvest notes, seasonal recipes and member-only pricing. No spam, unsubscribe any time.",
+   "button": "Subscribe",
+   "photo": "1488459716781-31db52582fe9"
+  },
+  {
+   "placement": "trust",
+   "title": "100% Organic Certified",
+   "text": "Every grower audited and certified to USDA organic standards."
+  },
+  {
+   "placement": "trust",
+   "title": "45-Min Express Delivery",
+   "text": "Same-day slots across the city, seven days a week."
+  },
+  {
+   "placement": "trust",
+   "title": "Secure Payments",
+   "text": "Encrypted checkout with all major cards and wallets."
+  },
+  {
+   "placement": "trust",
+   "title": "Easy Returns",
+   "text": "Not fresh? Tell us within 24 hours for a full refund."
+  }
+ ],
+ "DEALS": [
+  {
+   "name": "Buy 1 Get 1",
+   "buy": 1,
+   "get": 1,
+   "percent": 100,
+   "products": [
+    "Alphonso Mangoes",
+    "Organic Hass Avocado"
+   ]
+  },
+  {
+   "name": "Buy 3 Save 15%",
+   "buy": 2,
+   "get": 1,
+   "percent": 45,
+   "products": [
+    "Free-Range Eggs",
+    "Almond Croissants"
+   ]
+  },
+  {
+   "name": "Buy 2 Get 1",
+   "buy": 2,
+   "get": 1,
+   "percent": 100,
+   "category": "dairy"
+  }
+ ],
+ "DISCOUNTS": [
+  {
+   "code": "FRESH5",
+   "type": "fixed",
+   "value": "5.00",
+   "min": "40.00"
+  },
+  {
+   "code": "FIRST10",
+   "type": "percentage",
+   "value": "10.00",
+   "per_customer": 1
+  }
+ ],
+ "FEATURED": [
+  "Heirloom Tomatoes"
+ ],
+ "TIPS": {
+  "fruits": [
+   "Store at room temperature until ripe, then refrigerate.",
+   "Rinse just before eating, not before storing.",
+   "Best enjoyed within 4–5 days."
+  ],
+  "vegetables": [
+   "Keep refrigerated in the crisper drawer.",
+   "Wrap leafy greens in a damp cloth to keep them crisp.",
+   "Best used within 3–5 days."
+  ],
+  "dairy": [
+   "Keep refrigerated at 1–4°C.",
+   "Use within 3 days of opening.",
+   "Shake gently before pouring; cream rises naturally."
+  ],
+  "bakery": [
+   "Store in a paper bag at room temperature.",
+   "Refresh in a hot oven for 5 minutes.",
+   "Slice and freeze for up to 1 month."
+  ]
+ },
+ "NUTRITION": {
+  "fruits": [
+   [
+    "Energy",
+    "160 kcal"
+   ],
+   [
+    "Carbohydrate",
+    "9 g"
+   ],
+   [
+    "of which sugars",
+    "0.7 g"
+   ],
+   [
+    "Fibre",
+    "6.7 g"
+   ],
+   [
+    "Protein",
+    "2 g"
+   ],
+   [
+    "Vitamin C",
+    "10 mg"
+   ]
+  ],
+  "vegetables": [
+   [
+    "Energy",
+    "23 kcal"
+   ],
+   [
+    "Carbohydrate",
+    "3.6 g"
+   ],
+   [
+    "of which sugars",
+    "0.4 g"
+   ],
+   [
+    "Fibre",
+    "2.2 g"
+   ],
+   [
+    "Protein",
+    "2.9 g"
+   ],
+   [
+    "Iron",
+    "2.7 mg"
+   ]
+  ],
+  "dairy": [
+   [
+    "Energy",
+    "64 kcal"
+   ],
+   [
+    "Fat",
+    "3.6 g"
+   ],
+   [
+    "of which saturates",
+    "2.3 g"
+   ],
+   [
+    "Carbohydrate",
+    "4.8 g"
+   ],
+   [
+    "Protein",
+    "3.4 g"
+   ],
+   [
+    "Calcium",
+    "120 mg"
+   ]
+  ],
+  "bakery": [
+   [
+    "Energy",
+    "250 kcal"
+   ],
+   [
+    "Fat",
+    "1.2 g"
+   ],
+   [
+    "Carbohydrate",
+    "49 g"
+   ],
+   [
+    "of which sugars",
+    "2.1 g"
+   ],
+   [
+    "Fibre",
+    "3.4 g"
+   ],
+   [
+    "Protein",
+    "9 g"
+   ]
+  ]
+ },
+ "REVIEWS": [
+  {
+   "name": "Marisol Vega",
+   "ago": "-2 days",
+   "rating": 5,
+   "body": "Arrived perfectly fresh and exactly as pictured. Already on my weekly order."
+  },
+  {
+   "name": "Daniel Okoye",
+   "ago": "-1 week",
+   "rating": 5,
+   "body": "Noticeably better than the supermarket version. The packaging composted fine in our garden bin."
+  },
+  {
+   "name": "Priya Raman",
+   "ago": "-3 weeks",
+   "rating": 4,
+   "body": "Great quality and the delivery driver was early. One item was a little small but still tasty."
+  }
+ ],
+ "AR": {
+  "categories": {
+   "fruits": "فواكه",
+   "vegetables": "خضروات",
+   "dairy": "ألبان وبيض",
+   "bakery": "مخبوزات",
+   "meat-fish": "لحوم وأسماك",
+   "beverages": "مشروبات",
+   "snacks": "وجبات خفيفة",
+   "pantry": "مؤن عضوية"
+  },
+  "products": {
+   "Organic Hass Avocado": "أفوكادو هاس عضوي",
+   "Baby Leaf Spinach": "سبانخ أوراق صغيرة",
+   "Free-Range Eggs": "بيض مزارع حرة",
+   "Sourdough Country Loaf": "رغيف خبز العجين المخمّر",
+   "Heirloom Tomatoes": "طماطم بلدية",
+   "Alphonso Mangoes": "مانجو ألفونسو",
+   "Grass-Fed Whole Milk": "حليب كامل الدسم من أبقار المراعي",
+   "Almond Croissants": "كرواسون باللوز",
+   "Pink Lady Apples": "تفاح بينك ليدي",
+   "Rainbow Chard": "سلق ملوّن",
+   "Farmhouse Butter": "زبدة المزرعة",
+   "Seeded Rye Bread": "خبز الجاودار بالبذور",
+   "Blueberry Punnet": "علبة توت أزرق",
+   "Purple Sprouting Broccoli": "بروكلي أرجواني",
+   "Natural Greek Yoghurt": "زبادي يوناني طبيعي",
+   "Cinnamon Morning Buns": "لفائف القرفة الصباحية"
+  },
+  "packs": {
+   "Family pack": "عبوة عائلية"
+  },
+  "short": {
+   "fruits": "تُقطف ناضجة في {farm} وتصل إلى غرفة التبريد خلال ساعات. حلوة وعطرة وعضوية معتمدة، بلا طبقات شمع.",
+   "vegetables": "تُقلع من التربة في {farm} هذا الصباح. مقرمشة وغنية بالنكهة ومزروعة دون مبيدات صناعية.",
+   "dairy": "من قطعان المراعي في {farm}. مبستر بلطف وغير مجانس، يُعبّأ يوم جمعه.",
+   "bakery": "يُخمّر ببطء طوال الليل في {farm} بدقيق عضوي مطحون بالحجر وملح البحر فقط."
+  },
+  "growers": {
+   "sunridge-orchards": [
+    "بساتين صن ريدج",
+    "مقاطعة سونوما، كاليفورنيا",
+    "فواكه ذات نواة وتفاح وحمضيات من بستان عائلي في سونوما."
+   ],
+   "two-creeks-farm": [
+    "مزرعة تو كريكس",
+    "هاف مون باي، كاليفورنيا",
+    "جذور وخضار ورقية وصليبيات تُزرع على 40 فداناً قرب هاف مون باي."
+   ],
+   "hollow-creek-dairy": [
+    "ألبان هولو كريك",
+    "بيتالوما، كاليفورنيا",
+    "حليب مراعٍ وزبدة مخمّرة وزبادي من قطيع من 60 بقرة."
+   ],
+   "mill-lane-bakehouse": [
+    "مخبز ميل لين",
+    "يُخبز في سان فرانسيسكو",
+    "خبز العجين المخمّر والمعجنات من قمح تراثي."
+   ]
+  },
+  "menus": {
+   "Header": null,
+   "Home": "الرئيسية",
+   "Homepage": "الصفحة الرئيسية",
+   "Popular Products": "المنتجات الأكثر رواجاً",
+   "Deals of the Day": "صفقات اليوم",
+   "Shop": "المتجر",
+   "All Products": "كل المنتجات",
+   "Fruits": "فواكه",
+   "Vegetables": "خضروات",
+   "Dairy": "ألبان",
+   "Bakery": "مخبوزات",
+   "Offers": "العروض",
+   "Contact": "تواصل معنا",
+   "Organic fruit & veg|30% OFF": "فواكه وخضار عضوية|خصم 30%",
+   "Fresh dairy|BUY 2 GET 1": "ألبان طازجة|اشترِ 2 واحصل على 1",
+   "Morning bakery|20% OFF": "مخبوزات الصباح|خصم 20%",
+   "Fruits & Berries": "فواكه وتوت",
+   "Dairy & Eggs": "ألبان وبيض",
+   "Weekly Offers": "عروض الأسبوع",
+   "Our Growers": "مزارعونا",
+   "Sustainability": "الاستدامة",
+   "Careers": "الوظائف",
+   "Delivery Info": "معلومات التوصيل",
+   "Returns & Refunds": "الإرجاع والاسترداد",
+   "Track Order": "تتبّع الطلب",
+   "FAQs": "الأسئلة الشائعة"
+  },
+  "menu_names": {
+   "header-deals": "لهذا الأسبوع فقط|خصم كبير",
+   "footer-shop": "المتجر",
+   "footer-company": "الشركة",
+   "footer-help": "المساعدة"
+  },
+  "banners": [
+   [
+    "قُطفت هذا الصباح",
+    "منتجات عضوية فاخرة، |تُوصَّل يومياً",
+    "منتجات طازجة من مزارعين محليين، تصلك في اليوم نفسه.",
+    "تسوّق الآن"
+   ],
+   [
+    null,
+    "130 كم",
+    "مزارعون محليون",
+    null
+   ],
+   [
+    null,
+    "45 دقيقة",
+    "توصيل سريع",
+    null
+   ],
+   [
+    null,
+    "100%",
+    "عضوي معتمد",
+    null
+   ],
+   [
+    "لنهاية الأسبوع فقط",
+    "مهرجان توفير نهاية الأسبوع",
+    "30% خصم|على جميع الفواكه والخضار العضوية هذا الأسبوع.",
+    "احصل على العرض"
+   ],
+   [
+    "قسم الألبان",
+    "ألبان طازجة",
+    "حليب مراعٍ وزبادي المزرعة وبيض المزارع الحرة من ألبان هولو كريك.",
+    "تسوّق الألبان"
+   ],
+   [
+    "وصل حديثاً",
+    "عصائر معصورة على البارد",
+    "تُعبّأ صباح طلبك",
+    "تسوّق الآن"
+   ],
+   [
+    "أسبوع المؤن",
+    "حبوب وبقوليات عريقة",
+    "وفّر حتى 25% على العبوات الكبيرة",
+    "تسوّق الآن"
+   ],
+   [
+    "مزارعون محليون",
+    "تعرّف على مزرعة هولو كريك",
+    "بيض وقشطة وزبدة يومياً",
+    "تسوّق الآن"
+   ],
+   [
+    "يتجدد عند منتصف الليل",
+    "صفقة |اليوم",
+    "منتج مميز بأقل سعر، مع أساسيات يومية مخفّضة حتى انتهاء الوقت.",
+    null
+   ],
+   [
+    "طازج كل يوم",
+    "خضار ورقية مقرمشة، خصم 25%",
+    null,
+    "تسوّق الآن"
+   ],
+   [
+    "لنهاية الأسبوع فقط",
+    "فواكه عصيرية من 3.90$",
+    null,
+    "تسوّق الآن"
+   ],
+   [
+    "اشترِ 2 واحصل على 1",
+    "ألبان وبيض المزرعة",
+    null,
+    "تسوّق الآن"
+   ],
+   [
+    "فواكه موسمية",
+    "خصم حتى 25% على التوت الطازج",
+    null,
+    "تسوّق الفواكه"
+   ],
+   [
+    "انضم إلى أكثر من 40,000 طاهٍ منزلي",
+    "احصل على خصم 10% على طلبك الأول",
+    "أخبار الحصاد الأسبوعية، ووصفات موسمية، وأسعار للأعضاء. بلا رسائل مزعجة، ويمكنك إلغاء الاشتراك متى شئت.",
+    "اشترك"
+   ],
+   [
+    null,
+    "عضوي معتمد 100%",
+    "كل مزارع مُدقَّق ومعتمد وفق معايير USDA العضوية.",
+    null
+   ],
+   [
+    null,
+    "توصيل سريع خلال 45 دقيقة",
+    "مواعيد في نفس اليوم في أنحاء المدينة، سبعة أيام في الأسبوع.",
+    null
+   ],
+   [
+    null,
+    "دفع آمن",
+    "دفع مشفّر بجميع البطاقات والمحافظ الرئيسية.",
+    null
+   ],
+   [
+    null,
+    "إرجاع سهل",
+    "ليس طازجاً؟ أخبرنا خلال 24 ساعة لاسترداد كامل المبلغ.",
+    null
+   ]
+  ],
+  "pages": {
+   "shop": [
+    "المتجر",
+    "كل الأقسام في مكان واحد. عضوي معتمد، يُحصد خلال 48 ساعة، ويُوصَّل في اليوم نفسه."
+   ],
+   "sale": [
+    "العروض",
+    "كل الخصومات والعروض والباقات المتاحة في قائمة واحدة. عروض جديدة كل خميس."
+   ],
+   "offers": [
+    "العروض",
+    "كل الخصومات والعروض والباقات المتاحة في قائمة واحدة. عروض جديدة كل خميس."
+   ],
+   "contact": [
+    "تواصل معنا",
+    "أسئلة عن طلب أو منتج أو الانضمام كمزارع؟ تواصل مع الفريق مباشرة."
+   ],
+   "faq": [
+    "الأسئلة الشائعة",
+    "إجابات عن أكثر الأسئلة حول الطلبات والتوصيل ومزارعينا."
+   ],
+   "delivery-info": [
+    "معلومات التوصيل",
+    "كيف ومتى وأين نوصل، وكم يكلّف."
+   ],
+   "returns-refunds": [
+    "الإرجاع والاسترداد",
+    "إن لم يكن شيء على ما يرام، نستبدله أو نعيد لك المبلغ. دون أي أسئلة."
+   ],
+   "our-growers": [
+    "مزارعونا",
+    "كل منتج يأتي من مزرعة معروفة الاسم على بُعد 130 كم من مستودعنا."
+   ],
+   "sustainability": [
+    "الاستدامة",
+    "تغليف خالٍ من البلاستيك، ومسارات محايدة كربونياً، وأسعار عادلة للمزارعين."
+   ],
+   "careers": [
+    "الوظائف",
+    "انضم إلى فريق يوصل الطعام الطازج من المزارع المحلية إلى البيوت."
+   ],
+   "privacy-policy": [
+    "سياسة الخصوصية",
+    "كيف تجمع Daily Basket معلوماتك الشخصية وتستخدمها وتحميها. آخر تحديث 1 سبتمبر 2026."
+   ],
+   "terms-conditions": [
+    "الشروط والأحكام",
+    "الشروط التي تنطبق عند استخدام Daily Basket وتقديم طلب. آخر تحديث 1 سبتمبر 2026."
+   ]
+  },
+  "categories_blurb": {
+   "fruits": "تنضج على الشجر وتُقطف فجراً. فواكه ذات نواة وتوت وحمضيات من مزارعين على بُعد 130 كم.",
+   "vegetables": "جذور وخضار ورقية وصليبيات تُقلع هذا الصباح وتُعبّأ في صناديق قابلة للتحلّل.",
+   "dairy": "حليب مراعٍ وزبدة مخمّرة وبيض مزارع حرة من هولو كريك وثلاث مزارع مجاورة.",
+   "bakery": "خبز مخمّر ببطء ومعجنات تُخبز ليلاً، على بابك قبل الفطور."
+  },
+  "settings": {
+   "tagline": "من المزرعة إليك خلال 45 دقيقة",
+   "meta_description": "بقالة عضوية من مزارعين على بُعد 130 كم، تصلك خلال 45 دقيقة. عضوية معتمدة، وتغليف خالٍ من البلاستيك، ومسارات محايدة كربونياً.",
+   "address": "18 ميدو رو\nسان فرانسيسكو، كاليفورنيا 94110",
+   "opening_hours": "يومياً، 7 صباحاً – 10 مساءً",
+   "store_name": "Daily Basket"
+  }
+ }
+}

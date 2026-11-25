@@ -1,0 +1,30 @@
+/* The design's page-wide styles (freshnest-html <helmet>), shared by every page. */
+html, body { margin:0; padding:0; background:var(--fn-canvas); color:var(--fn-ink); font-family:Inter, system-ui, sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+* { box-sizing:border-box; }
+a { color:var(--fn-primary-dark); text-decoration:none; }
+a:hover { color:var(--fn-primary); }
+button, input, select { font-family:inherit; }
+.wrap { width:100%; max-width:1640px; margin:0 auto; padding-left:clamp(16px,4vw,32px); padding-right:clamp(16px,4vw,32px); }
+.mob-only { display:none; }
+@media (max-width:899px) { .mob-only { display:flex; } .desk-only { display:none !important; } }
+@media (max-width:1199px) { .wide-only { display:none !important; } }
+.navdd-panel { display:none; }
+.navdd:hover .navdd-panel, .navdd:focus-within .navdd-panel { display:block; }
+.foot-grid { display:grid; gap:28px; grid-template-columns:1fr; }
+@media (min-width:760px) { .foot-grid { grid-template-columns:1.7fr repeat(4,minmax(0,1fr)); gap:32px; } }
+.h2-desk { display:none !important; }
+.h2-mob { display:flex; }
+@media (min-width:1024px) { .h2-desk { display:flex !important; } .h2-mob { display:none !important; } }
+.nv-wide { display:none !important; }
+@media (min-width:1440px) { .nv-wide { display:flex !important; } }
+.nv-cat { flex:0 0 190px; }
+.nv-links { gap:18px; }
+.nv-links a { font-size:13px !important; }
+.nv-mid { display:none !important; }
+@media (min-width:1280px) { .nv-cat { flex-basis:210px; } .nv-links { gap:26px; } .nv-links a { font-size:14px !important; } .nv-mid { display:flex !important; } }
+.nv-panel { display:none; }
+.nv:hover .nv-panel, .nv:focus-within .nv-panel { display:block; }
+.fab-stack { bottom:calc(88px + env(safe-area-inset-bottom)); }
+.fab-label { display:none; }
+@media (min-width:1024px) { .fab-stack { bottom:28px; } .fab-label { display:inline; } }
+@media (max-width:1023px) { .fab-stack > a { width:52px; padding:0 !important; justify-content:center; } }

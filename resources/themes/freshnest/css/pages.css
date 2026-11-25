@@ -1,0 +1,32 @@
+/* The design's inner-page styles (freshnest-html shop / content pages <helmet>). */
+textarea { font-family:inherit; }
+.shop-grid { display:grid; gap:24px; grid-template-columns:1fr; }
+@media (min-width:1000px) { .shop-grid { grid-template-columns:280px minmax(0,1fr); gap:32px; align-items:start; } }
+@media (min-width:1300px) { .fn-listing .pgrid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+.offer-grid { display:grid; gap:20px; grid-template-columns:1fr; }
+@media (min-width:900px) { .offer-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+.contact-grid { display:grid; gap:28px; grid-template-columns:1fr; align-items:start; }
+@media (min-width:900px) { .contact-grid { grid-template-columns:1fr 1.15fr; gap:40px; } }
+.info-grid { display:grid; gap:14px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+@media (min-width:1100px) { .info-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:480px) { .info-grid { grid-template-columns:minmax(0,1fr) !important; } }
+/* Text written in the admin's editor, on content pages. */
+.fn-page-text > * { margin:0 0 10px; }
+.fn-page-text > *:last-child { margin-bottom:0; }
+.fn-page-text ul, .fn-page-text ol { padding-inline-start:20px; }
+.fn-page-text ul { list-style:disc; }
+.fn-page-text li { margin-bottom:6px; }
+.fn-page-text a { color:var(--fn-primary-dark); text-decoration:underline; }
+.fn-page-text strong { color:var(--fn-ink); }
+
+/* Pictures, videos and tables from the admin's HTML editor (product descriptions, pages). */
+.fn-page-text img, .fn-rich img { max-width:100%; height:auto; border-radius:14px; }
+.fn-page-text iframe, .fn-rich iframe, .fn-page-text video, .fn-rich video { display:block; width:100%; max-width:720px; height:auto; aspect-ratio:16/9; border:0; border-radius:14px; background:var(--fn-primary-tint); }
+.fn-page-text figure, .fn-rich figure { margin:0 0 12px; }
+.fn-page-text figcaption, .fn-rich figcaption { font-size:13px; color:var(--fn-muted); margin-top:6px; }
+.fn-page-text table, .fn-rich table { width:100%; border-collapse:collapse; font-size:14.5px; display:block; overflow-x:auto; }
+.fn-page-text th, .fn-page-text td, .fn-rich th, .fn-rich td { border:1px solid var(--fn-line); padding:8px 12px; text-align:start; vertical-align:top; }
+.fn-page-text th, .fn-rich th { background:#F1F8F2; color:var(--fn-ink); font-weight:700; }
+.fn-rich ul { list-style:disc; padding-inline-start:20px; }
+.fn-rich ol { list-style:decimal; padding-inline-start:20px; }
+.fn-rich blockquote, .fn-page-text blockquote { border-inline-start:3px solid var(--fn-primary); padding-inline-start:14px; color:#3E4A3E; }

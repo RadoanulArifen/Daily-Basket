@@ -1,0 +1,127 @@
+@import 'tailwindcss' source(none);
+@import './tour.css';
+
+@source '../views/storefront';
+@source '../views/components/store';
+@source '../views/components/icon.blade.php';
+
+@theme {
+    --font-sans: 'IBM Plex Sans', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+    --font-arabic: 'IBM Plex Sans Arabic', 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+
+    --color-paper: #fcfbf9;
+    --color-ink: #22262a;
+    --color-ink-soft: #4a4f55;
+    --color-stone: #7d776c;
+    --color-wool: #e8dfd0;
+    --color-wool-soft: #f3eee6;
+    --color-line: #e6e1d8;
+    --color-brand-red: #9b2c24;
+    --color-brand-red-dark: #7e221c;
+    --color-date: #2f4a3f;
+
+    --color-danger: #b42318;
+    --color-success: #2f6b45;
+
+    --container-shop: 90rem;
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    [dir='rtl'] body {
+        font-family: var(--font-arabic);
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-ink);
+        outline-offset: 3px;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;   /* a looping animation would otherwise spin at full speed */
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+@layer components {
+    /*
+     * The demo store's signature: a strip of woven pattern, the traditional
+     * Bedouin textile of the Emirates. Used sparingly (top of page, above footer).
+     */
+    .weave-band {
+        --brand-red-a: var(--color-brand-red);
+        --brand-red-b: var(--color-ink);
+        --brand-red-bg: var(--color-wool);
+        height: 0.75rem;
+        background:
+            linear-gradient(135deg, var(--brand-red-a) 25%, transparent 25%) -6px 0 / 12px 12px,
+            linear-gradient(225deg, var(--brand-red-a) 25%, transparent 25%) -6px 0 / 12px 12px,
+            linear-gradient(315deg, var(--brand-red-b) 25%, transparent 25%) 0 0 / 12px 12px,
+            linear-gradient(45deg, var(--brand-red-b) 25%, transparent 25%) 0 0 / 12px 12px,
+            var(--brand-red-bg);
+    }
+
+    .store-field {
+        @apply block w-full rounded-md border border-line bg-white px-3.5 py-3 text-base text-ink transition
+            placeholder:text-stone/70
+            focus:border-ink focus:ring-2 focus:ring-ink/10 focus:outline-none;
+    }
+
+    .store-field-error {
+        @apply border-danger focus:border-danger focus:ring-danger/15;
+    }
+}
+
+@layer components {
+    /* Content pages (About, policies…): readable text from Markdown. */
+    .store-prose {
+        @apply text-[17px] leading-relaxed text-ink-soft;
+    }
+    .store-prose > * + * { margin-top: 1.1em; }
+    .store-prose h2 { @apply mt-10 text-xl font-semibold text-ink; }
+    .store-prose h3 { @apply mt-8 text-lg font-semibold text-ink; }
+    .store-prose ul { @apply list-disc ps-6; }
+    .store-prose ol { @apply list-decimal ps-6; }
+    .store-prose li + li { margin-top: 0.35em; }
+    .store-prose a { @apply text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink; }
+    .store-prose strong { @apply font-semibold text-ink; }
+    .store-prose blockquote { @apply border-s-2 border-brand-red ps-4 italic; }
+    /* Pictures, videos and tables from the admin's HTML editor. */
+    .store-prose img { max-width: 100%; height: auto; }
+    .store-prose iframe, .store-prose video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; }
+    .store-prose table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+    .store-prose th, .store-prose td { border: 1px solid var(--color-line, #e3e3e3); padding: 0.5em 0.75em; text-align: start; }
+}
+
+@layer components {
+    /* Home page promise ribbon: two identical lists scroll as one endless strip. */
+    .home-marquee {
+        animation: home-marquee 38s linear infinite;
+    }
+    [dir='rtl'] .home-marquee {
+        animation-direction: reverse;
+    }
+    .home-marquee:hover {
+        animation-play-state: paused;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .home-marquee { animation: none; }
+    }
+}
+
+@keyframes home-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}

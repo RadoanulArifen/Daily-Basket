@@ -1,0 +1,288 @@
+/*
+ * Guided-tour popups (resources/js/tour/engine.js). Plain CSS, no Tailwind, so the same file
+ * works in the admin and in every storefront theme. A skin only changes the variables:
+ * data-skin="admin" (neutral, black buttons, green ring) or "store" (rounded, brand colours —
+ * a theme sets --tour-* on :root to match its design).
+ */
+:root {
+    --tour-ring: #2e9e4f;
+    --tour-dim: rgba(18, 18, 18, 0.55);
+    --tour-surface: #ffffff;
+    --tour-ink: #303030;
+    --tour-title: #1a1a1a;
+    --tour-muted: #5c5c5c;
+    --tour-label: #1e7a3c;
+    --tour-primary: #1a1a1a;
+    --tour-primary-ink: #ffffff;
+    --tour-progress: #2e9e4f;
+    --tour-track: #e3e3e3;
+    --tour-radius: 14px;
+    --tour-button-radius: 9px;
+    --tour-font: inherit;
+}
+
+.tour-layer[data-skin='store'] {
+    --tour-radius: var(--tour-store-radius, 20px);
+    --tour-button-radius: 999px;
+}
+
+.tour-dim {
+    position: fixed;
+    inset: 0;
+    z-index: 9990;
+    background: var(--tour-dim);
+}
+
+.tour-ring {
+    position: fixed;
+    z-index: 9990;
+    border-radius: 12px;
+    box-shadow: 0 0 0 3px var(--tour-ring), 0 0 0 9999px var(--tour-dim);
+    pointer-events: none;
+    transition: left 0.2s ease, top 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.tour-dim[hidden],
+.tour-ring[hidden] {
+    display: none;
+}
+
+.tour-pop {
+    position: fixed;
+    z-index: 9991;
+    width: min(360px, calc(100vw - 24px));
+    box-sizing: border-box;
+    background: var(--tour-surface);
+    color: var(--tour-ink);
+    border-radius: var(--tour-radius);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+    font-family: var(--tour-font);
+    font-size: 14px;
+    line-height: 1.55;
+    text-align: start;
+    outline: none;
+}
+
+.tour-pop[data-centered] {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+}
+
+.tour-pop[data-sheet] {
+    left: 0 !important;
+    right: 0;
+    top: auto !important;
+    bottom: 0;
+    width: auto;
+    border-radius: 20px 20px 0 0;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.tour-arrow {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--tour-surface);
+    border-radius: 2px;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.tour-pop[data-side='bottom'] .tour-arrow { display: block; top: -7px; }
+.tour-pop[data-side='top'] .tour-arrow { display: block; bottom: -7px; }
+.tour-pop[data-side='right'] .tour-arrow { display: block; left: -7px; }
+.tour-pop[data-side='left'] .tour-arrow { display: block; right: -7px; }
+
+.tour-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px 16px 0 20px;
+}
+
+.tour-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--tour-label);
+}
+
+.tour-layer[data-skin='store'] .tour-label {
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.tour-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex: none;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--tour-muted);
+    cursor: pointer;
+}
+
+.tour-close:hover,
+.tour-close:focus-visible { background: rgba(0, 0, 0, 0.06); color: var(--tour-title); }
+
+.tour-progress {
+    display: flex;
+    gap: 4px;
+    padding: 6px 20px 0;
+}
+
+.tour-progress span {
+    flex: 1;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--tour-track);
+}
+
+.tour-progress span.is-done { background: var(--tour-progress); }
+
+.tour-body { padding: 12px 20px 0; }
+
+.tour-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--tour-title);
+}
+
+.tour-layer[data-skin='store'] .tour-title { font-size: 19px; font-weight: 800; }
+
+.tour-text { margin: 6px 0 0; color: var(--tour-muted); }
+
+.tour-note {
+    margin: 10px 0 0;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.04);
+    font-size: 13px;
+    color: var(--tour-muted);
+}
+
+.tour-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px 18px;
+}
+
+.tour-skip {
+    padding: 8px 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 13px;
+    color: var(--tour-muted);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tour-skip:hover { color: var(--tour-title); }
+
+.tour-buttons { display: flex; gap: 8px; }
+
+.tour-btn {
+    min-height: 38px;
+    padding: 0 16px;
+    border-radius: var(--tour-button-radius);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tour-btn--secondary { border: 1px solid #d4d4d4; background: #fff; color: var(--tour-ink); }
+.tour-btn--secondary:hover { background: #f5f5f5; }
+.tour-btn--primary { border: 0; background: var(--tour-primary); color: var(--tour-primary-ink); }
+.tour-btn--primary:hover { filter: brightness(1.12); }
+.tour-btn:focus-visible,
+.tour-skip:focus-visible,
+.tour-close:focus-visible { outline: 2px solid var(--tour-ring); outline-offset: 2px; }
+
+.tour-pop[data-sheet] .tour-btn { min-height: 44px; }
+
+/* "Continue the tour" bar when the admin is on another page than the current step. */
+.tour-resume {
+    position: fixed;
+    inset-inline-start: 16px;
+    bottom: 16px;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: calc(100vw - 32px);
+    padding: 10px 10px 10px 16px;
+    border-radius: 12px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 13px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.tour-resume-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tour-resume-go { color: #fff; font-weight: 600; text-decoration: underline; white-space: nowrap; }
+.tour-resume-close {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+.tour-resume-close:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* Storefront: the "take the tour" button on the home page. */
+.tour-launcher {
+    position: fixed;
+    inset-inline-start: 20px;
+    bottom: 20px;
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 0 18px 0 7px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--tour-launcher-bg, #1a1a1a);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.tour-launcher-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--tour-launcher-icon, var(--tour-ring));
+}
+
+.tour-launcher:focus-visible { outline: 2px solid var(--tour-ring); outline-offset: 3px; }
+
+@media (max-width: 639px) {
+    .tour-launcher { bottom: 14px; inset-inline-start: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tour-ring { transition: none; }
+}
