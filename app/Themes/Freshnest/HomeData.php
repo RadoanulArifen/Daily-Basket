@@ -26,7 +26,11 @@ use Illuminate\Support\Facades\Cache;
 class HomeData
 {
     public const HOMEPAGE_CATALOG_CACHE = 'freshnest.home.catalog.v1';
+
+    public const HOMEPAGE_CONTENT_CACHE = 'freshnest.home.content.v1';
     private ?Collection $banners = null;
+
+    private ?array $content = null;
 
     private ?Collection $topCategories = null;
 
@@ -41,7 +45,11 @@ class HomeData
     /** Live banners for one place, in their order. */
     public function banners(string $placement): Collection
     {
-        $this->banners ??= Banner::query()->live()->with('image')->get()->groupBy('placement');
+        $this->banners ??= ($this->cacheHomepage()
+            ? collect($this->homepageContent()['banners'])->map(fn (array $row) => (new Banner)
+                ->newFromBuilder($row['banner'])->setRelation('image', $this->hydrateOne(Media::class, $row['image'])))
+                ->filter(fn (Banner $banner) => $this->isScheduledNow($banner))
+            : Banner::query()->live()->with('image')->get())->groupBy('placement');
 
         return $this->banners->get($placement, collect())->values();
     }
@@ -54,8 +62,10 @@ class HomeData
     /** @return Collection<int, Category> */
     public function topCategories(): Collection
     {
-        return $this->topCategories ??= Category::query()->active()->whereNull('parent_id')
-            ->with('image')->orderBy('sort_order')->get();
+        return $this->topCategories ??= $this->cacheHomepage()
+            ? collect($this->homepageContent()['categories'])->map(fn (array $row) => (new Category)
+                ->newFromBuilder($row['category'])->setRelation('image', $this->hydrateOne(Media::class, $row['image'])))
+            : $this->topCategoryQuery()->get();
     }
 
     /** @return Collection<int, array{category: Category, count: int}> top-level categories with product counts */
@@ -66,8 +76,7 @@ class HomeData
         }
 
         $categories = $this->topCategories();
-        $counts = Cache::remember('freshnest.category_counts', 600, fn () => $categories->mapWithKeys(
-            fn ($c) => [$c->id => $this->catalog->inCategory($this->catalog->products(), $c)->count()])->all());
+        $counts = Cache::remember('freshnest.category_counts', 600, fn () => $this->categoryCounts());
 
         return $this->categoryRows = $categories->map(fn ($c) => ['category' => $c, 'count' => $counts[$c->id] ?? 0]);
     }
@@ -82,7 +91,7 @@ class HomeData
         $query = $this->catalog->products()->with(['categories', 'brandRecord', 'variants.optionValues'])
             ->orderBy('products.id');
 
-        if (config('cache.default') !== 'file' || ! request()->routeIs('home', '*.home')) {
+        if (! $this->cacheHomepage()) {
             return $this->products = $query->get();
         }
 
@@ -168,7 +177,11 @@ class HomeData
     /** Live buy-X-get-Y deals. */
     public function promotions(): Collection
     {
-        return $this->promotions ??= Promotion::query()->live()->with('category')->get();
+        return $this->promotions ??= $this->cacheHomepage()
+            ? collect($this->homepageContent()['promotions'])->map(fn (array $row) => (new Promotion)
+                ->newFromBuilder($row['promotion'])->setRelation('category', $this->hydrateOne(Category::class, $row['category'])))
+                ->filter(fn (Promotion $promotion) => $this->isScheduledNow($promotion))
+            : Promotion::query()->live()->with('category')->get();
     }
 
     /** The first deal that applies to a product, as its label ("Buy 1 Get 1"). */
@@ -199,10 +212,15 @@ class HomeData
     /** A spend-and-save discount code ("Spend $40, get $5 off") for the middle offer card. */
     public function spendDiscount(): ?Discount
     {
-        return Discount::query()->where('is_active', true)->where('type', 'fixed')->whereNotNull('min_subtotal')
+        if ($this->cacheHomepage()) {
+            return Discount::hydrate($this->homepageContent()['discounts'])
+                ->first(fn (Discount $discount) => $this->isScheduledNow($discount));
+        }
+
+        return $this->spendDiscountQuery()
             ->where(fn ($q) => $q->whereNull('starts_at')->orWhere('starts_at', '<=', now()))
             ->where(fn ($q) => $q->whereNull('ends_at')->orWhere('ends_at', '>', now()))
-            ->orderBy('min_subtotal')->first();
+            ->first();
     }
 
     /**
@@ -235,6 +253,82 @@ class HomeData
             'category_slug' => $product->categories->first()?->slug,
             'stock' => $variant->track_inventory ? (int) $variant->stock_quantity : null,
         ];
+    }
+
+    private function cacheHomepage(): bool
+    {
+        return config('cache.default') === 'file' && request()->routeIs('home', '*.home');
+    }
+
+    /** Count distinct live products under each root, including its active descendants. */
+    private function categoryCounts(): array
+    {
+        $categories = Category::query()->get(['id', 'parent_id', 'is_active'])->keyBy('id');
+        $roots = [];
+        foreach ($categories->where('is_active', true) as $category) {
+            $ancestor = $category;
+            $visited = [];
+            while ($ancestor && $ancestor->parent_id !== null && ! isset($visited[$ancestor->id])) {
+                $visited[$ancestor->id] = true;
+                $ancestor = $categories->get($ancestor->parent_id);
+            }
+
+            if ($ancestor?->parent_id === null && $ancestor?->is_active) {
+                $roots[$category->id] = $ancestor->id;
+            }
+        }
+
+        $productsByRoot = [];
+        $membership = $this->catalog->products()->join('category_product', 'category_product.product_id', '=', 'products.id')
+            ->whereIn('category_product.category_id', array_keys($roots))->toBase()
+            ->get(['products.id', 'category_product.category_id']);
+
+        foreach ($membership as $row) {
+            $productsByRoot[$roots[$row->category_id]][$row->id] = true;
+        }
+
+        return array_map('count', $productsByRoot);
+    }
+
+    private function topCategoryQuery(): \Illuminate\Database\Eloquent\Builder
+    {
+        return Category::query()->active()->whereNull('parent_id')->with('image')->orderBy('sort_order');
+    }
+
+    private function spendDiscountQuery(): \Illuminate\Database\Eloquent\Builder
+    {
+        return Discount::query()->where('is_active', true)->where('type', 'fixed')
+            ->whereNotNull('min_subtotal')->orderBy('min_subtotal');
+    }
+
+    private function homepageContent(): array
+    {
+        return $this->content ??= Cache::remember(self::HOMEPAGE_CONTENT_CACHE, 300, fn () => [
+            // Include scheduled rows so they can start and end on time between cache refreshes.
+            'banners' => Banner::query()->where('is_active', true)->with('image')->orderBy('sort_order')->orderByDesc('id')
+                ->get()->map(fn (Banner $banner) => ['banner' => $banner->getAttributes(), 'image' => $banner->image?->getAttributes()])->all(),
+            'categories' => $this->topCategoryQuery()->get()->map(fn (Category $category) => [
+                'category' => $category->getAttributes(), 'image' => $category->image?->getAttributes(),
+            ])->all(),
+            'promotions' => Promotion::query()->where('is_active', true)->with('category')->orderBy('id')
+                ->get()->map(fn (Promotion $promotion) => [
+                    'promotion' => $promotion->getAttributes(), 'category' => $promotion->category?->getAttributes(),
+                ])->all(),
+            'discounts' => $this->spendDiscountQuery()->get()->map->getAttributes()->all(),
+        ]);
+    }
+
+    private function hydrateOne(string $model, ?array $attributes): ?Model
+    {
+        return $attributes === null ? null : (new $model)->newFromBuilder($attributes);
+    }
+
+    private function isScheduledNow(Banner|Promotion|Discount $item): bool
+    {
+        $now = now();
+
+        return ($item->starts_at === null || $item->starts_at->lte($now))
+            && ($item->ends_at === null || $item->ends_at->gt($now));
     }
 
     /** "4.8" and "5,121": the store's average rating and how many ratings it rests on. */

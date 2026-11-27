@@ -88,6 +88,20 @@ class AppServiceProvider extends ServiceProvider
             }
         }
 
+        if (config('cache.default') === 'file' && config('store.theme') === 'freshnest') {
+            foreach ([
+                \App\Models\Banner::class,
+                \App\Models\Category::class,
+                \App\Models\Discount::class,
+                \App\Models\Media::class,
+                \App\Models\Promotion::class,
+            ] as $model) {
+                Event::listen(['eloquent.saved: '.$model, 'eloquent.deleted: '.$model], fn () => \Illuminate\Support\Facades\DB::afterCommit(
+                    fn () => \Illuminate\Support\Facades\Cache::forget(\App\Themes\Freshnest\HomeData::HOMEPAGE_CONTENT_CACHE),
+                ));
+            }
+        }
+
         // Storefront theme (STORE_THEME): its views win, the base views fill any gaps.
         if (($theme = config('store.theme')) && is_dir($path = resource_path("themes/{$theme}/views"))) {
             \Illuminate\Support\Facades\View::prependLocation($path);
